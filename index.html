@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="it" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══════════════════════════════════════════
+     SEO PRIMARIO
+════════════════════════════════════════════ -->
+<title>Aurora per le Marche – Associazione Culturale Ancona | Cultura e Impegno Civile</title>
+<meta name="description" content="Aurora per le Marche è un'associazione culturale con sede nelle Marche. Promuoviamo cultura civica, dialogo democratico e impegno sociale ad Ancona e in tutta la regione. Scopri chi siamo e le nostre attività.">
+<meta name="keywords" content="associazione culturale Ancona, associazione culturale Marche, cultura civica Ancona, impegno civile Marche, associazione politica Marche, Aurora Marche, federalismo europeo Marche, dialogo democratico Ancona">
+<meta name="author" content="Aurora per le Marche">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.auroraperlermarche.it/">
+
+<!-- ═══════════════════════════════════════════
+     OPEN GRAPH (Facebook / WhatsApp / LinkedIn)
+════════════════════════════════════════════ -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Aurora per le Marche">
+<meta property="og:title" content="Aurora per le Marche – Associazione Culturale Ancona">
+<meta property="og:description" content="Associazione culturale e civile nelle Marche. Promuoviamo cultura, dialogo democratico e impegno sociale ad Ancona e in tutta la regione.">
+<meta property="og:url" content="https://www.auroraperlermarche.it/">
+<meta property="og:image" content="https://www.auroraperlermarche.it/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Aurora per le Marche – Associazione Culturale">
+
+<!-- ═══════════════════════════════════════════
+     TWITTER CARD
+════════════════════════════════════════════ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aurora per le Marche – Associazione Culturale Ancona">
+<meta name="twitter:description" content="Associazione culturale e civile nelle Marche. Cultura, dialogo democratico e impegno sociale ad Ancona e nella regione.">
+<meta name="twitter:image" content="https://www.auroraperlermarche.it/og-image.jpg">
+
+<!-- ═══════════════════════════════════════════
+     SCHEMA.ORG JSON-LD (Google Knowledge Panel)
+════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Aurora per le Marche",
+  "alternateName": "Aurora Marche",
+  "description": "Associazione culturale e civile nelle Marche che promuove cultura, dialogo democratico, laicità e federalismo europeo.",
+  "url": "https://www.auroraperlermarche.it/",
+  "logo": "https://www.auroraperlermarche.it/logo.png",
+  "image": "https://www.auroraperlermarche.it/og-image.jpg",
+  "telephone": "+393397316559",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ancona",
+    "addressRegion": "Marche",
+    "addressCountry": "IT"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Marche"
+  },
+  "sameAs": [
+    "https://www.instagram.com/aurora_per_le_marche",
+    "https://www.facebook.com/auroraperlermarche"
+  ],
+  "foundingDate": "2024",
+  "founder": [
+    { "@type": "Person", "name": "Simone" },
+    { "@type": "Person", "name": "Emanuele" }
+  ],
+  "member": [
+    { "@type": "Person", "name": "Roberto Palumbo", "jobTitle": "Presidente" },
+    { "@type": "Person", "name": "Martina Bonci", "jobTitle": "Segretario" },
+    { "@type": "Person", "name": "Pierpaolo Loffreda", "jobTitle": "Presidente Onorario" },
+    { "@type": "Person", "name": "Emanuele Merio Martinelli", "jobTitle": "Tesoriere" }
+  ]
+}
+</script>
+
+<!-- ═══════════════════════════════════════════
+     FONTS
+════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --rose: #e8417a;
+    --blue: #2563c7;
+    --blue-light: #4f8ef7;
+    --gold: #f0c040;
+    --dark: #111827;
+    --mid: #374151;
+    --soft: #f7f4f0;
+    --white: #ffffff;
+    --gradient: linear-gradient(135deg, #e8417a 0%, #2563c7 100%);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; color: var(--dark); background: var(--soft); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(232,65,122,0.15);
+    padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; height: 70px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo-circle {
+    width: 44px; height: 44px; border-radius: 50%; background: var(--gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-weight: 900; color: white;
+    font-size: 18px; letter-spacing: -1px; flex-shrink: 0;
+  }
+  .nav-brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.1rem; color: var(--dark); line-height: 1.2; }
+  .nav-brand span { display: block; font-size: 0.7rem; font-family: 'Jost', sans-serif; font-weight: 400; color: var(--rose); letter-spacing: 2px; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--mid); font-weight: 500; font-size: 0.9rem; letter-spacing: 0.5px; transition: color 0.2s; position: relative; }
+  .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: var(--gradient); transform: scaleX(0); transition: transform 0.2s; border-radius: 2px; }
+  .nav-links a:hover { color: var(--rose); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  /* HERO */
+  #home { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 80px 5vw 60px; }
+  .hero-bg { position: absolute; inset: 0; background: linear-gradient(160deg, #fdf2f7 0%, #eff6ff 60%, #fdf2f7 100%); z-index: 0; }
+  .hero-orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.35; animation: float 8s ease-in-out infinite; }
+  .orb1 { width: 500px; height: 500px; background: var(--rose); top: -100px; right: -100px; animation-delay: 0s; }
+  .orb2 { width: 400px; height: 400px; background: var(--blue); bottom: -80px; left: 10%; animation-delay: 3s; }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
+  .hero-content { position: relative; z-index: 1; max-width: 720px; animation: fadeUp 1s ease forwards; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: white; border: 1px solid rgba(232,65,122,0.3); color: var(--rose); font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 8px 18px; border-radius: 100px; margin-bottom: 32px; box-shadow: 0 4px 20px rgba(232,65,122,0.12); }
+  .hero-tag::before { content: '✦'; font-size: 10px; }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 900; line-height: 1.05; margin-bottom: 28px; color: var(--dark); }
+  h1 em { font-style: italic; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-desc { font-size: 1.1rem; color: var(--mid); line-height: 1.8; max-width: 560px; margin-bottom: 44px; font-weight: 300; }
+  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary { padding: 16px 36px; background: var(--gradient); color: white; border: none; border-radius: 50px; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.5px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 8px 30px rgba(232,65,122,0.35); transition: transform 0.2s, box-shadow 0.2s; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(232,65,122,0.45); }
+  .btn-secondary { padding: 16px 36px; background: transparent; color: var(--dark); border: 2px solid rgba(55,65,81,0.25); border-radius: 50px; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 0.95rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s, color 0.2s; }
+  .btn-secondary:hover { border-color: var(--rose); color: var(--rose); }
+  .hero-values { position: absolute; right: 5vw; top: 40%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 16px; z-index: 1; animation: fadeUp 1.2s ease 0.3s both; }
+  .value-pill { background: white; border-radius: 12px; padding: 14px 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border-left: 4px solid; font-size: 0.85rem; font-weight: 500; color: var(--mid); max-width: 220px; transition: transform 0.2s; }
+  .value-pill:hover { transform: translateX(-4px); }
+  .value-pill:nth-child(1) { border-color: var(--rose); } .value-pill:nth-child(2) { border-color: var(--blue); }
+  .value-pill:nth-child(3) { border-color: #10b981; } .value-pill:nth-child(4) { border-color: var(--gold); }
+  .value-pill:nth-child(5) { border-color: #8b5cf6; }
+  .value-pill strong { display: block; color: var(--dark); margin-bottom: 2px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* SECTIONS */
+  section { padding: 100px 5vw; }
+  .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--rose); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .section-label::before { content: ''; width: 32px; height: 2px; background: var(--gradient); border-radius: 2px; }
+  h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 24px; color: var(--dark); }
+  h2 em { font-style: italic; color: var(--rose); }
+
+  /* CHI SIAMO */
+  #chi-siamo { background: white; }
+  .chi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto; }
+  .chi-text p { color: var(--mid); line-height: 1.9; margin-bottom: 20px; font-size: 1rem; font-weight: 300; }
+  .chi-text p strong { color: var(--dark); font-weight: 600; }
+  .vision-strip { background: var(--gradient); border-radius: 20px; padding: 36px 40px; color: white; }
+  .vision-strip p { font-size: 1.05rem; line-height: 1.8; font-style: italic; opacity: 0.95; }
+
+  /* DIRETTIVO */
+  #direttivo { background: var(--soft); }
+  .direttivo-header { text-align: center; margin-bottom: 64px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .direttivo-header .section-label { justify-content: center; }
+  .direttivo-header .section-label::before { display: none; }
+  .board-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; max-width: 1200px; margin: 0 auto; }
+  .board-card { background: white; border-radius: 24px; padding: 36px 28px; text-align: center; border: 1px solid rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
+  .board-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; }
+  .board-card.presidente::before { background: var(--gradient); }
+  .board-card.segretario::before { background: linear-gradient(90deg, #2563c7, #4f8ef7); }
+  .board-card.onorario::before { background: linear-gradient(90deg, #f0c040, #fb923c); }
+  .board-card.tesoriere::before { background: linear-gradient(90deg, #10b981, #34d399); }
+  .board-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+
+  /* AVATAR img da backend */
+  .board-avatar {
+    width: 90px; height: 90px; border-radius: 50%;
+    margin: 0 auto 20px; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.4rem;
+  }
+  .board-card.presidente .board-avatar { background: linear-gradient(135deg, #fce7f3, #fbcfe8); }
+  .board-card.segretario .board-avatar { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+  .board-card.onorario .board-avatar { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+  .board-card.tesoriere .board-avatar { background: linear-gradient(135deg, #d1fae5, #a7f3d0); }
+  .board-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+
+  .board-role { font-size: 0.72rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 8px; display: block; }
+  .board-card.presidente .board-role { color: var(--rose); }
+  .board-card.segretario .board-role { color: var(--blue); }
+  .board-card.onorario .board-role { color: #d97706; }
+  .board-card.tesoriere .board-role { color: #059669; }
+  .board-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
+  .board-card > p { font-size: 0.85rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
+
+  /* ATTIVITÀ */
+  #attivita { background: white; }
+  .attivita-header { margin-bottom: 60px; max-width: 600px; }
+  .activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; max-width: 1200px; margin: 0 auto; }
+  .activity-card { border-radius: 24px; overflow: hidden; border: 1px solid rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; background: var(--soft); }
+  .activity-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+
+  /* BANNER img da backend */
+  .activity-banner { height: 200px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; }
+  .activity-banner img { width: 100%; height: 100%; object-fit: cover; display: block; position: relative; z-index: 1; }
+  .banner-fallback { font-size: 3.5rem; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 0; }
+  .activity-card:nth-child(1) .activity-banner { background: linear-gradient(135deg, #fce7f3 0%, #ede9fe 100%); }
+  .activity-card:nth-child(2) .activity-banner { background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 100%); }
+  .activity-card:nth-child(3) .activity-banner { background: linear-gradient(135deg, #fdf2f7 0%, #fce7f3 100%); }
+
+  .activity-body { padding: 28px; }
+  .activity-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; margin-bottom: 14px; }
+  .tag-dibattito { background: #fce7f3; color: var(--rose); }
+  .tag-commemorazione { background: #dbeafe; color: var(--blue); }
+  .tag-evento { background: #fdf2f7; color: #be185d; }
+  .activity-body h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--dark); margin-bottom: 12px; line-height: 1.3; }
+  .activity-body p { font-size: 0.88rem; color: var(--mid); line-height: 1.8; font-weight: 300; margin-bottom: 20px; }
+  .activity-meta { display: flex; align-items: center; gap: 16px; font-size: 0.78rem; color: #9ca3af; font-weight: 500; flex-wrap: wrap; }
+  .activity-meta span { display: flex; align-items: center; gap: 5px; }
+  .activity-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600; color: var(--rose); text-decoration: none; margin-top: 14px; padding: 8px 16px; border: 1.5px solid rgba(232,65,122,0.3); border-radius: 50px; transition: background 0.2s, color 0.2s; }
+  .activity-link:hover { background: var(--rose); color: white; border-color: var(--rose); }
+
+  /* CONTATTI */
+  #contatti { background: var(--dark); color: white; text-align: center; position: relative; overflow: hidden; }
+  #contatti::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(232,65,122,0.2), transparent 70%); top: -200px; left: -100px; }
+  #contatti::after { content: ''; position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(37,99,199,0.2), transparent 70%); bottom: -150px; right: -50px; }
+  .contatti-content { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+  #contatti .section-label { color: #fb7bb0; justify-content: center; }
+  #contatti .section-label::before { background: var(--rose); }
+  #contatti h2 { color: white; }
+  #contatti p { color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.8; margin-bottom: 48px; font-weight: 300; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 48px; }
+  .contact-item { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 24px 16px; transition: background 0.2s; }
+  .contact-item:hover { background: rgba(255,255,255,0.12); }
+  .contact-item .icon { font-size: 1.8rem; margin-bottom: 12px; }
+  .contact-item p { margin: 0; font-size: 0.85rem; color: rgba(255,255,255,0.8); }
+  .contact-item strong { display: block; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; font-weight: 400; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px; margin-top: 32px; font-size: 0.8rem; color: rgba(255,255,255,0.3); display: flex; justify-content: space-between; align-items: center; }
+  .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+
+  @media (max-width: 900px) {
+    .hero-values { display: none; }
+    .chi-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav aria-label="Navigazione principale">
+  <a href="#home" class="nav-logo" aria-label="Aurora per le Marche – Home">
+    <div class="logo-circle" aria-hidden="true">A</div>
+    <div class="nav-brand">Aurora <span>per le Marche</span></div>
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#chi-siamo">Chi Siamo</a></li>
+    <li><a href="#direttivo">Direttivo</a></li>
+    <li><a href="#attivita">Attività</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home" aria-label="Intestazione principale">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="orb1 hero-orb" aria-hidden="true"></div>
+  <div class="orb2 hero-orb" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-tag" aria-hidden="true">Associazione Culturale · Marche</div>
+    <h1>Cultura,<br>dialogo e<br><em>impegno civile</em></h1>
+    <p class="hero-desc">
+      Aurora è un'associazione culturale e aggregatore politico ad Ancona e nelle Marche che riunisce persone e movimenti su tematiche sociali condivise — democratica, laica, federalista e radicalmente impegnata per le Marche e l'Europa.
+    </p>
+    <div class="hero-cta">
+      <a href="#chi-siamo" class="btn-primary">Scopri Aurora →</a>
+      <a href="#attivita" class="btn-secondary">Le nostre attività</a>
+    </div>
+  </div>
+  <div class="hero-values" aria-label="Valori fondanti">
+    <div class="value-pill"><strong>Democratica</strong>Partecipazione e rappresentanza</div>
+    <div class="value-pill"><strong>Laica</strong>Libertà di coscienza e pensiero</div>
+    <div class="value-pill"><strong>Federalista</strong>Europea e autonomista</div>
+    <div class="value-pill"><strong>Antiproibizionista</strong>Libertà individuale responsabile</div>
+  </div>
+</section>
+
+<!-- CHI SIAMO -->
+<section id="chi-siamo" aria-labelledby="chi-siamo-title">
+  <div class="chi-grid">
+    <div class="chi-text">
+      <div class="section-label" aria-hidden="true">Chi Siamo</div>
+      <h2 id="chi-siamo-title">Un'<em>aurora</em> di idee per le Marche</h2>
+      <p><strong>Aurora per le Marche</strong> nasce dall'idea di costruire uno spazio culturale e politico aperto ad Ancona e in tutta la regione, capace di aggregare sensibilità diverse attorno a valori condivisi: la nonviolenza, la democrazia, la laicità e il federalismo europeo.</p>
+      <p>Non siamo un partito, ma un <strong>aggregatore</strong>: un luogo di incontro e confronto tra persone, movimenti e forze politiche che condividono la visione di una società più libera, giusta e sostenibile — radicata nel territorio delle Marche e aperta all'Europa.</p>
+      <p>Crediamo nel valore del dialogo civile, nella forza della cultura come strumento di cambiamento, e nell'importanza di affrontare le grandi questioni del nostro tempo — dall'ecologia alla giustizia sociale — con rigore, passione e spirito riformatore.</p>
+    </div>
+    <div>
+      <div class="vision-strip">
+        <p>"Aurora nasce dall'incontro tra Simone ed Emanuele nel 2024, dalla convinzione che il cambiamento culturale e politico nelle Marche debba partire dal basso, dalla società civile, dai cittadini."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIRETTIVO -->
+<section id="direttivo" aria-labelledby="direttivo-title">
+  <div class="direttivo-header">
+    <div class="section-label" aria-hidden="true">Chi ci guida</div>
+    <h2 id="direttivo-title">Il <em>Direttivo</em></h2>
+    <p style="color:var(--mid);line-height:1.8;font-size:1rem;font-weight:300;max-width:500px;margin:0 auto;">
+      Le persone che animano Aurora ogni giorno, garantendo direzione, organizzazione e continuità all'associazione.
+    </p>
+  </div>
+
+  <div class="board-grid">
+
+    <!-- PRESIDENTE — sostituisci src con URL reale dal tuo backend -->
+    <article class="board-card presidente">
+      <div class="board-avatar">
+        <img src="img/roberto.jpg"
+             alt="Roberto Palumbo, Presidente di Aurora per le Marche"
+             width="90" height="90"
+             onerror="this.outerHTML='👤'">
+      </div>
+      <span class="board-role">Presidente</span>
+      <h3>Roberto Palumbo</h3>
+      <p>Guida l'associazione e ne rappresenta i valori. Coordina con il segretario le attività e promuove le relazioni istituzionali sul territorio marchigiano.</p>
+    </article>
+
+    <!-- SEGRETARIO — sostituisci src con URL reale dal tuo backend -->
+    <article class="board-card segretario">
+      <div class="board-avatar">
+        <img src="img/martina.jpg"
+             alt="Martina Bonci, Segretario di Aurora per le Marche"
+             width="90" height="90"
+             onerror="this.outerHTML='📋'">
+      </div>
+      <span class="board-role">Segretario</span>
+      <h3>Martina Bonci</h3>
+      <p>Gestisce l'organizzazione, le comunicazioni ufficiali e coordina il lavoro quotidiano dell'associazione.</p>
+    </article>
+
+    <!-- PRESIDENTE ONORARIO — sostituisci src con URL reale dal tuo backend -->
+    <article class="board-card onorario">
+      <div class="board-avatar">
+        <img src="img/pierpaolo.jpg"
+             alt="Pierpaolo Loffreda, Presidente Onorario di Aurora per le Marche"
+             width="90" height="90"
+             onerror="this.outerHTML='🏛️'">
+      </div>
+      <span class="board-role">Presidente Onorario</span>
+      <h3>Pierpaolo Loffreda</h3>
+      <p>Figura di riferimento e garanzia istituzionale dell'associazione. Offre guida e continuità con la visione fondativa di Aurora.</p>
+    </article>
+
+    <!-- TESORIERE — sostituisci src con URL reale dal tuo backend -->
+    <article class="board-card tesoriere">
+      <div class="board-avatar">
+        <img src="img/emanuele.jpg"
+             alt="Emanuele Merio Martinelli, Tesoriere di Aurora per le Marche"
+             width="90" height="90"
+             onerror="this.outerHTML='📊'">
+      </div>
+      <span class="board-role">Tesoriere</span>
+      <h3>Emanuele Merio Martinelli</h3>
+      <p>Responsabile della gestione economica dell'associazione, garantendo trasparenza e sostenibilità.</p>
+    </article>
+
+  </div>
+</section>
+
+<!-- ATTIVITÀ -->
+<section id="attivita" aria-labelledby="attivita-title">
+  <div class="attivita-header">
+    <div class="section-label" aria-hidden="true">Cosa Facciamo</div>
+    <h2 id="attivita-title">Le nostre <em>Attività</em></h2>
+    <p style="color:var(--mid);line-height:1.8;font-size:1rem;font-weight:300;max-width:500px;">
+      Dibattiti, commemorazioni, incontri pubblici: Aurora agisce sul territorio marchigiano per costruire cultura civica e partecipazione attiva ad Ancona e nelle Marche.
+    </p>
+  </div>
+
+  <div class="activities-grid">
+
+    <!-- TASSA ETICA — sostituisci src con URL reale dal tuo backend -->
+    <article class="activity-card">
+      <div class="activity-banner">
+        <img src="\img\tassa etica.jpg"
+             alt="Dibattito Aurora per le Marche sulla tassa etica ad Ancona, febbraio 2026"
+             width="400" height="200"
+             onerror="this.style.display='none'">
+        <div class="banner-fallback" aria-hidden="true">💰</div>
+      </div>
+      <div class="activity-body">
+        <span class="activity-tag tag-dibattito">Dibattito</span>
+        <h3>Confronto sulla Tassa Etica</h3>
+        <p>L'evento di Ancona ha analizzato la proposta di legge per abolire la "tassa etica", un'addizionale del 25% su IRPEF e IRES per il settore pornografico lecito. Il dibattito ha evidenziato come questa imposta sia discriminatoria: non colpisce in base alla capacità contributiva, ma applica un pregiudizio morale a un'attività lavorativa regolare.</p>
+        <div class="activity-meta">
+          <span>📍 Ancona</span>
+          <span>🗓 Febbraio 2026</span>
+        </div>
+        <a href="https://firmereferendum.giustizia.it/referendum/open/dettaglio-open/5600018"
+           target="_blank" rel="noopener noreferrer" class="activity-link"
+           aria-label="Firma il referendum per abolire la tassa etica sul portale del Ministero della Giustizia">
+          ✍️ Firma il referendum
+        </a>
+      </div>
+    </article>
+
+    <!-- UCRAINA — sostituisci src con URL reale dal tuo backend -->
+    <article class="activity-card">
+      <div class="activity-banner">
+        <img src="\img\ucraina commemorazione ancona.jpg"
+             alt="Commemorazione del conflitto in Ucraina Co-organizzato da Aurora per le Marche, 24 febbraio 2026"
+             width="400" height="200"
+             onerror="this.style.display='none'">
+        <div class="banner-fallback" aria-hidden="true">🕊️</div>
+      </div>
+      <div class="activity-body">
+        <span class="activity-tag tag-commemorazione">Commemorazione</span>
+        <h3>Commemorazione della Guerra in Ucraina</h3>
+        <p>Un momento di riflessione collettiva e memoria civile per non dimenticare il dramma del conflitto in Ucraina. Aurora co-organizza con l'associazione europea italia-ucraina Maidan della regione Marche una cerimonia pubblica per la solidarietà e la difesa dei diritti umani.</p>
+        <div class="activity-meta">
+          <span>📍 Marche</span>
+          <span>🗓 24 Febbraio 2026</span>
+        </div>
+      </div>
+    </article>
+
+  
+    <article class="activity-card">
+      <div class="activity-banner">
+        <img src="\img\ma quale casa.jpg"
+             alt="Emergenza abitativa nella regione Marche"
+             width="400" height="200"
+             onerror="this.style.display='none'">
+        <div class="banner-fallback" aria-hidden="true">🌸</div>
+      </div>
+      <div class="activity-body">
+        <span class="activity-tag tag-evento">Tematica</span>
+        <h3>Emergenza abitativa</h3>
+        <p>Aurora ha partecipato all'evento "Ma quale casa ?" e mantiene attivo un gruppo di confronto e studio sulla materia come obiettivo di associazione per il 2026</p>
+        <div class="activity-meta">
+          <span>📍 Marche</span>
+          <span>🟢 attività</span>
+        </div>
+      </div>
+    </article> 
+
+    <article class="activity-card">
+      <div class="activity-banner">
+        <img src="img/ospedale.png"
+             alt="Emergenza Sanità Marche"
+             width="400" height="200"
+             onerror="this.style.display='none'">
+        <div class="banner-fallback" aria-hidden="true">🌸</div>
+      </div>
+      <div class="activity-body">
+        <span class="activity-tag tag-evento">Tematica</span>
+        <h3>Sanità Marche</h3>
+        <p>Aurora si impegna per affrontare le problematiche strutturali delle strutture e del personale mantenendo questo tema come obiettivo di associazione per il 2026</p>
+        <div class="activity-meta">
+          <span>📍 Marche</span>
+          <span>🟢 attività</span>
+        </div>
+      </div>
+    </article> 
+
+
+  </div>
+
+</section>
+
+<!-- CONTATTI -->
+<section id="contatti" aria-labelledby="contatti-title">
+  <div class="contatti-content">
+    <div class="section-label" aria-hidden="true">Unisciti a Noi</div>
+    <h2 id="contatti-title">Entra in <em>Aurora</em></h2>
+    <p>Condividi i nostri valori? Vuoi partecipare, collaborare o semplicemente saperne di più? Aurora è uno spazio aperto a chiunque creda nel cambiamento culturale e civile delle Marche.</p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="icon" aria-hidden="true">📱</div>
+        <strong>Telefono</strong>
+        <p><a href="tel:+393397316559" style="color:inherit;text-decoration:none;">339 731 6559</a></p>
+      </div>
+      <div class="contact-item">
+        <div class="icon" aria-hidden="true">📸</div>
+        <strong>Instagram</strong>
+        <p><a href="https://www.instagram.com/aurora_per_le_marche" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">@aurora_per_le_marche</a></p>
+      </div>
+      <div class="contact-item">
+        <div class="icon" aria-hidden="true">💬</div>
+        <strong>Facebook</strong>
+        <p><a href="https://www.facebook.com/auroraperlermarche" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Aurora per le Marche</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 Aurora per le Marche · Associazione Culturale – Ancona, Marche</span>
+      <span>Una proposta nonviolenta, democratica e riformatrice</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
