@@ -150,6 +150,12 @@
   .value-pill:nth-child(3) { border-color: #10b981; } .value-pill:nth-child(4) { border-color: var(--gold); }
   .value-pill:nth-child(5) { border-color: #8b5cf6; }
   .value-pill strong { display: block; color: var(--dark); margin-bottom: 2px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+  .logo-circle img {
+    width: 100%;       /* L'immagine occupa tutta la larghezza del cerchio */
+    height: 100%;      /* L'immagine occupa tutta l'altezza del cerchio */
+    border-radius: 50%; /* Rende l'immagine stessa rotonda */
+    object-fit: cover; /* Ritaglia l'immagine per riempire il cerchio senza deformarla */
+}
 
   /* SECTIONS */
   section { padding: 100px 5vw; }
