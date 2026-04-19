@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ═══════════════════════════════════════════
-     SEO PRIMARIO
-════════════════════════════════════════════ -->
 <title>Aurora per le Marche – Associazione Culturale Ancona | Cultura e Impegno Civile</title>
 <meta name="description" content="Aurora per le Marche è un'associazione culturale con sede nelle Marche. Promuoviamo cultura civica, dialogo democratico e impegno sociale ad Ancona e in tutta la regione. Scopri chi siamo e le nostre attività.">
 <meta name="keywords" content="associazione culturale Ancona, associazione culturale Marche, cultura civica Ancona, impegno civile Marche, associazione politica Marche, Aurora Marche, federalismo europeo Marche, dialogo democratico Ancona">
@@ -14,9 +11,6 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.auroraperlermarche.it/">
 
-<!-- ═══════════════════════════════════════════
-     OPEN GRAPH (Facebook / WhatsApp / LinkedIn)
-════════════════════════════════════════════ -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Aurora per le Marche">
@@ -28,17 +22,11 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Aurora per le Marche – Associazione Culturale">
 
-<!-- ═══════════════════════════════════════════
-     TWITTER CARD
-════════════════════════════════════════════ -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Aurora per le Marche – Associazione Culturale Ancona">
 <meta name="twitter:description" content="Associazione culturale e civile nelle Marche. Cultura, dialogo democratico e impegno sociale ad Ancona e nella regione.">
 <meta name="twitter:image" content="https://www.auroraperlermarche.it/og-image.jpg">
 
-<!-- ═══════════════════════════════════════════
-     SCHEMA.ORG JSON-LD (Google Knowledge Panel)
-════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -78,9 +66,6 @@
 }
 </script>
 
-<!-- ═══════════════════════════════════════════
-     FONTS
-════════════════════════════════════════════ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -150,12 +135,7 @@
   .value-pill:nth-child(3) { border-color: #10b981; } .value-pill:nth-child(4) { border-color: var(--gold); }
   .value-pill:nth-child(5) { border-color: #8b5cf6; }
   .value-pill strong { display: block; color: var(--dark); margin-bottom: 2px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
-  .logo-circle img {
-    width: 100%;       /* L'immagine occupa tutta la larghezza del cerchio */
-    height: 100%;      /* L'immagine occupa tutta l'altezza del cerchio */
-    border-radius: 50%; /* Rende l'immagine stessa rotonda */
-    object-fit: cover; /* Ritaglia l'immagine per riempire il cerchio senza deformarla */
-}
+  .logo-circle img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
 
   /* SECTIONS */
   section { padding: 100px 5vw; }
@@ -186,13 +166,7 @@
   .board-card.tesoriere::before { background: linear-gradient(90deg, #10b981, #34d399); }
   .board-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
 
-  /* AVATAR img da backend */
-  .board-avatar {
-    width: 90px; height: 90px; border-radius: 50%;
-    margin: 0 auto 20px; overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 2.4rem;
-  }
+  .board-avatar { width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 20px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 2.4rem; }
   .board-card.presidente .board-avatar { background: linear-gradient(135deg, #fce7f3, #fbcfe8); }
   .board-card.segretario .board-avatar { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
   .board-card.onorario .board-avatar { background: linear-gradient(135deg, #fef3c7, #fde68a); }
@@ -207,6 +181,23 @@
   .board-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
   .board-card > p { font-size: 0.85rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
 
+  /* MEMBRI DEL DIRETTIVO (senza carica) */
+  .members-divider { max-width: 1200px; margin: 48px auto 32px; display: flex; align-items: center; gap: 16px; }
+  .members-divider span { font-size: 0.72rem; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #9ca3af; white-space: nowrap; }
+  .members-divider::before, .members-divider::after { content: ''; flex: 1; height: 1px; background: rgba(0,0,0,0.08); }
+
+  .board-grid-members { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; max-width: 1200px; margin: 0 auto; }
+
+  .board-card-member { background: white; border-radius: 18px; padding: 22px 16px; text-align: center; border: 1px solid rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
+  .board-card-member::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, rgba(232,65,122,0.4), rgba(37,99,199,0.4)); }
+  .board-card-member:hover { transform: translateY(-5px); box-shadow: 0 14px 35px rgba(0,0,0,0.09); }
+
+  .board-avatar-sm { width: 72px; height: 72px; border-radius: 50%; margin: 0 auto 14px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f3f4f6, #e5e7eb); font-size: 1.8rem; }
+  .board-avatar-sm img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+
+  .member-role-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #9ca3af; margin-bottom: 5px; display: block; }
+  .board-card-member h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--dark); line-height: 1.25; }
+
   /* ATTIVITÀ */
   #attivita { background: white; }
   .attivita-header { margin-bottom: 60px; max-width: 600px; }
@@ -214,7 +205,6 @@
   .activity-card { border-radius: 24px; overflow: hidden; border: 1px solid rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; background: var(--soft); }
   .activity-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
 
-  /* BANNER img da backend */
   .activity-banner { height: 200px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; }
   .activity-banner img { width: 100%; height: 100%; object-fit: cover; display: block; position: relative; z-index: 1; }
   .banner-fallback { font-size: 3.5rem; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 0; }
@@ -258,6 +248,7 @@
     .contact-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
     .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    .board-grid-members { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
@@ -268,8 +259,8 @@
 <nav aria-label="Navigazione principale">
   <a href="#home" class="nav-logo" aria-label="Aurora per le Marche – Home">
     <div class="logo-circle" aria-hidden="true">
-    <img src="img/rosa.PNG" alt="Logo di Emanuele">
-</div>
+      <img src="img/rosa.PNG" alt="Logo di Emanuele">
+    </div>
     <div class="nav-brand">Aurora <span>per le Marche</span></div>
   </a>
   <ul class="nav-links" role="list">
@@ -333,9 +324,9 @@
     </p>
   </div>
 
+  <!-- CARICHE -->
   <div class="board-grid">
 
-    <!-- PRESIDENTE — sostituisci src con URL reale dal tuo backend -->
     <article class="board-card presidente">
       <div class="board-avatar">
         <img src="img/roberto.jpg"
@@ -345,23 +336,21 @@
       </div>
       <span class="board-role">Presidente</span>
       <h3>Roberto Palumbo</h3>
-      <p>Guida l'associazione e ne rappresenta i valori. Coordina con il segretario le attività e promuove le relazioni istituzionali sul territorio marchigiano.</p>
+      <p>Guida l'associazione e ne rappresenta i valori. Coordina con la segretaria le attività e promuove le relazioni istituzionali sul territorio marchigiano.</p>
     </article>
 
-    <!-- SEGRETARIO — sostituisci src con URL reale dal tuo backend -->
     <article class="board-card segretario">
       <div class="board-avatar">
         <img src="img/martina.jpg"
-             alt="Martina Bonci, Segretario di Aurora per le Marche"
+             alt="Martina Bonci, Segretaria di Aurora per le Marche"
              width="90" height="90"
              onerror="this.outerHTML='📋'">
       </div>
-      <span class="board-role">Segretario</span>
+      <span class="board-role">Segretaria</span>
       <h3>Martina Bonci</h3>
       <p>Gestisce l'organizzazione, le comunicazioni ufficiali e coordina il lavoro quotidiano dell'associazione.</p>
     </article>
 
-    <!-- PRESIDENTE ONORARIO — sostituisci src con URL reale dal tuo backend -->
     <article class="board-card onorario">
       <div class="board-avatar">
         <img src="img/pierpaolo.jpg"
@@ -374,7 +363,6 @@
       <p>Figura di riferimento e garanzia istituzionale dell'associazione. Offre guida e continuità con la visione fondativa di Aurora.</p>
     </article>
 
-    <!-- TESORIERE — sostituisci src con URL reale dal tuo backend -->
     <article class="board-card tesoriere">
       <div class="board-avatar">
         <img src="img/emanuele.jpg"
@@ -388,6 +376,51 @@
     </article>
 
   </div>
+
+  <!-- DIVISORE -->
+  <div class="members-divider">
+    <span>Membri del Direttivo</span>
+  </div>
+
+  <!-- MEMBRI SENZA CARICA -->
+  <div class="board-grid-members">
+
+    <article class="board-card-member">
+      <div class="board-avatar-sm">
+        <img src="img/alessandro-di-fabio.jpg"
+             alt="Membro del Direttivo di Aurora per le Marche"
+             width="72" height="72"
+             onerror="this.outerHTML='👤'">
+      </div>
+      <span class="member-role-label">Nel Direttivo</span>
+      <h4>Alessandro Di Fabio</h4>
+    </article>
+
+    <article class="board-card-member">
+      <div class="board-avatar-sm">
+        <img src="img/yulia.jpg"
+             alt="Membro del Direttivo di Aurora per le Marche"
+             width="72" height="72"
+             onerror="this.outerHTML='👤'">
+      </div>
+      <span class="member-role-label">Nel Direttivo</span>
+      <h4>Yuliya Dehtyaryova</h4>
+    </article>
+
+    <article class="board-card-member">
+      <div class="board-avatar-sm">
+        <img src="img/simone.jpg"
+             alt="Membro del Direttivo di Aurora per le Marche"
+             width="72" height="72"
+             onerror="this.outerHTML='👤'">
+      </div>
+      <span class="member-role-label">Nel Direttivo</span>
+      <h4>Simone</h4>
+    </article>
+
+
+  </div>
+
 </section>
 
 <!-- ATTIVITÀ -->
@@ -402,7 +435,6 @@
 
   <div class="activities-grid">
 
-    <!-- TASSA ETICA — sostituisci src con URL reale dal tuo backend -->
     <article class="activity-card">
       <div class="activity-banner">
         <img src="img/tassa-etica.jpg"
@@ -427,7 +459,6 @@
       </div>
     </article>
 
-    <!-- UCRAINA — sostituisci src con URL reale dal tuo backend -->
     <article class="activity-card">
       <div class="activity-banner">
         <img src="img/ucraina-commemorazione-ancona.jpg"
@@ -447,7 +478,6 @@
       </div>
     </article>
 
-  
     <article class="activity-card">
       <div class="activity-banner">
         <img src="img/ma-quale-casa.jpg"
@@ -465,7 +495,7 @@
           <span>🟢 attiva</span>
         </div>
       </div>
-    </article> 
+    </article>
 
     <article class="activity-card">
       <div class="activity-banner">
@@ -484,9 +514,9 @@
           <span>🟢 attiva</span>
         </div>
       </div>
-    </article> 
+    </article>
 
- <article class="activity-card">
+    <article class="activity-card">
       <div class="activity-banner">
         <img src="img/iran.jpg"
              alt="LUCI E VOCI PER LA LIBERTÀ DELL'IRAN"
@@ -499,13 +529,13 @@
         <h3>Commemorazione contro il regime di Khamenei e per la memoria delle vittime</h3>
         <p>Domenica 25 gennaio al Piazzale del Passetto di Ancona per accendere una luce contro la repressione in Iran. Insieme alla comunità iraniana, AURORA per le Marche e Associazione TerzaVia Odv organizzano questa manifestazione</p>
         <div class="activity-meta">
-          <span>📍 Ancona </span>
+          <span>📍 Ancona</span>
           <span>🗓 25 Gennaio 2026</span>
         </div>
       </div>
     </article>
-  </div>
 
+  </div>
 </section>
 
 <!-- CONTATTI -->
