@@ -1,1 +1,1 @@
-https://aledifa.github.io/aurora-per-le-marche/
+https://www.auroraperlemarche.eu
