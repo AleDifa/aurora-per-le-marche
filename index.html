@@ -224,6 +224,117 @@
   .activity-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600; color: var(--rose); text-decoration: none; margin-top: 14px; padding: 8px 16px; border: 1.5px solid rgba(232,65,122,0.3); border-radius: 50px; transition: background 0.2s, color 0.2s; }
   .activity-link:hover { background: var(--rose); color: white; border-color: var(--rose); }
 
+  /* LIVE YOUTUBE */
+  #live { background: var(--soft); }
+  .live-header { margin-bottom: 60px; max-width: 700px; }
+  .live-intro { color: var(--mid); line-height: 1.8; font-size: 1rem; font-weight: 300; margin-bottom: 0; }
+
+  .live-banner {
+    background: linear-gradient(135deg, #1a0a0a 0%, #1e0a0a 40%, #0f0f1a 100%);
+    border-radius: 28px;
+    padding: 56px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+  }
+  .live-banner::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,0,0,0.12), transparent 65%);
+    top: -150px; right: -100px;
+  }
+  .live-banner::after {
+    content: '';
+    position: absolute;
+    width: 350px; height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,65,122,0.1), transparent 65%);
+    bottom: -100px; left: 5%;
+  }
+
+  .live-text { position: relative; z-index: 1; }
+  .live-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,0,0,0.15); border: 1px solid rgba(255,0,0,0.35);
+    color: #ff4444; font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 7px 16px; border-radius: 100px; margin-bottom: 28px;
+  }
+  .live-badge .dot {
+    width: 7px; height: 7px; border-radius: 50%; background: #ff4444;
+    animation: pulse-dot 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+  .live-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 800; color: white; line-height: 1.2; margin-bottom: 20px;
+  }
+  .live-text h3 em { font-style: italic; color: #ff6b6b; }
+  .live-text p { font-size: 0.95rem; color: rgba(255,255,255,0.55); line-height: 1.85; font-weight: 300; margin-bottom: 36px; }
+
+  .live-features { display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
+  .live-feature {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 0.85rem; color: rgba(255,255,255,0.75); font-weight: 400;
+  }
+  .live-feature-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;
+  }
+
+  .btn-youtube {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #ff0000; color: white;
+    padding: 15px 32px; border-radius: 50px;
+    font-family: 'Jost', sans-serif; font-weight: 700; font-size: 0.9rem;
+    text-decoration: none; letter-spacing: 0.3px;
+    box-shadow: 0 8px 30px rgba(255,0,0,0.4);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    position: relative; z-index: 1;
+  }
+  .btn-youtube:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(255,0,0,0.55); background: #cc0000; }
+  .btn-youtube svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+  .live-visual { position: relative; z-index: 1; }
+  .live-screen {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px; padding: 28px; text-align: center;
+  }
+  .live-play-circle {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: rgba(255,0,0,0.2); border: 2px solid rgba(255,0,0,0.4);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px; font-size: 2rem;
+    box-shadow: 0 0 40px rgba(255,0,0,0.2);
+  }
+  .live-screen-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: white; font-weight: 700; margin-bottom: 8px; }
+  .live-screen-sub { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-weight: 300; margin-bottom: 20px; line-height: 1.6; }
+  .live-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .live-tag-pill {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 100px;
+    background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  @media (max-width: 900px) {
+    .live-banner { grid-template-columns: 1fr; gap: 40px; padding: 40px 28px; }
+    .live-visual { display: none; }
+  }
+
   /* CONTATTI */
   #contatti { background: var(--dark); color: white; text-align: center; position: relative; overflow: hidden; }
   #contatti::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(232,65,122,0.2), transparent 70%); top: -200px; left: -100px; }
@@ -268,6 +379,7 @@
     <li><a href="#chi-siamo">Chi Siamo</a></li>
     <li><a href="#direttivo">Direttivo</a></li>
     <li><a href="#attivita">Attività</a></li>
+    <li><a href="#live">Live YouTube</a></li>
     <li><a href="#contatti">Contatti</a></li>
   </ul>
 </nav>
@@ -418,6 +530,16 @@
       <h4>Simone Romagnoli</h4>
     </article>
 
+     <article class="board-card-member">
+      <div class="board-avatar-sm">
+        <img src="img/giacomo.jpg"
+             alt="Membro del Direttivo di Aurora per le Marche"
+             width="72" height="72"
+             onerror="this.outerHTML='👤'">
+      </div>
+      <span class="member-role-label">Nel Direttivo</span>
+      <h4>Giacomo Fratini</h4>
+    </article>
 
   </div>
 
@@ -535,6 +657,69 @@
       </div>
     </article>
 
+  </div>
+</section>
+
+<!-- LIVE YOUTUBE -->
+<section id="live" aria-labelledby="live-title">
+  <div class="live-header">
+    <div class="section-label" aria-hidden="true">Su YouTube</div>
+    <h2 id="live-title">Le nostre <em>Live</em></h2>
+    <p class="live-intro">
+      Ogni settimana ospitiamo sul nostro canale YouTube esperti, attivisti e figure politiche per affrontare in diretta i temi che contano: dalla politica locale alle grandi questioni nazionali ed europee. Un confronto aperto, libero e senza filtri.
+    </p>
+  </div>
+
+  <div class="live-banner">
+    <div class="live-text">
+      <div class="live-badge">
+        <span class="dot"></span>
+        Live su YouTube
+      </div>
+      <h3>Dibattiti in diretta con <em>ospiti e protagonisti</em> della politica</h3>
+      <p>
+        Il canale Aurora per le Marche è lo spazio digitale dove la politica si discute davvero. Invitiamo ospiti di diversa estrazione — politici, esperti, rappresentanti della società civile — per un dialogo autentico sui temi che riguardano le Marche e l'Italia.
+      </p>
+      <div class="live-features">
+        <div class="live-feature">
+          <div class="live-feature-icon">🎙️</div>
+          <span>Ospiti di diversa estrazione politica e culturale</span>
+        </div>
+        <div class="live-feature">
+          <div class="live-feature-icon">🗳️</div>
+          <span>Temi politici, sociali e civici di attualità</span>
+        </div>
+        <div class="live-feature">
+          <div class="live-feature-icon">💬</div>
+          <span>Dialogo aperto con la community in diretta</span>
+        </div>
+      </div>
+      <a href="https://www.youtube.com/@AuroraPerLeMarche/streams"
+         target="_blank" rel="noopener noreferrer"
+         class="btn-youtube"
+         aria-label="Guarda le live di Aurora per le Marche su YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+        Guarda le Live
+      </a>
+    </div>
+
+    <div class="live-visual">
+      <div class="live-screen">
+        <div class="live-play-circle">▶</div>
+        <div class="live-screen-title">Aurora per le Marche</div>
+        <div class="live-screen-sub">Dirette con ospiti su temi<br>politici e civici</div>
+        <div class="live-tags">
+          <span class="live-tag-pill">Politica</span>
+          <span class="live-tag-pill">Società</span>
+          <span class="live-tag-pill">Marche</span>
+          <span class="live-tag-pill">Europa</span>
+          <span class="live-tag-pill">Diritti</span>
+          <span class="live-tag-pill">Territorio</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
