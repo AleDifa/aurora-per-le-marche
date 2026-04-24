@@ -145,7 +145,14 @@
   h2 em { font-style: italic; color: var(--rose); }
 
   /* CHI SIAMO */
-  #chi-siamo { background: white; }
+  #chi-siamo {
+    background: linear-gradient(180deg,
+      #f5edf3 0%,
+      #eef3fc 35%,
+      #f4f0fb 65%,
+      #ffffff 100%
+    );
+  }
   .chi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto; }
   .chi-text p { color: var(--mid); line-height: 1.9; margin-bottom: 20px; font-size: 1rem; font-weight: 300; }
   .chi-text p strong { color: var(--dark); font-weight: 600; }
@@ -153,7 +160,14 @@
   .vision-strip p { font-size: 1.05rem; line-height: 1.8; font-style: italic; opacity: 0.95; }
 
   /* DIRETTIVO */
-  #direttivo { background: var(--soft); }
+  #direttivo {
+    background: linear-gradient(180deg,
+      #f9f6ff 0%,
+      #f6f9ff 30%,
+      #fafafa 65%,
+      #f7f4f0 100%
+    );
+  }
   .direttivo-header { text-align: center; margin-bottom: 64px; max-width: 600px; margin-left: auto; margin-right: auto; }
   .direttivo-header .section-label { justify-content: center; }
   .direttivo-header .section-label::before { display: none; }
@@ -225,7 +239,7 @@
   .activity-link:hover { background: var(--rose); color: white; border-color: var(--rose); }
 
   /* LIVE YOUTUBE */
-  #live { background: var(--soft); }
+  #live { background: white; }
   .live-header { margin-bottom: 60px; max-width: 700px; }
   .live-intro { color: var(--mid); line-height: 1.8; font-size: 1rem; font-weight: 300; margin-bottom: 0; }
 
