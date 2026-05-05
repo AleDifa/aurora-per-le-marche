@@ -349,6 +349,32 @@
     .live-visual { display: none; }
   }
 
+  /* TESSERAMENTO */
+  #tesseramento { background: white; padding: 100px 5vw; }
+  .tesseramento-inner { max-width: 1100px; margin: 0 auto; }
+  .tesseramento-header { margin-bottom: 56px; }
+  .tesseramento-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: start; }
+  .tesseramento-text p { color: var(--mid); line-height: 1.9; margin-bottom: 20px; font-size: 0.95rem; font-weight: 300; }
+  .tesseramento-text p strong { color: var(--dark); font-weight: 600; }
+  .tesseramento-perks { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
+  .perk-item { display: flex; align-items: flex-start; gap: 12px; background: var(--soft); border-radius: 12px; padding: 14px 18px; border-left: 3px solid var(--rose); }
+  .perk-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
+  .perk-text { font-size: 0.88rem; color: var(--mid); line-height: 1.6; font-weight: 300; }
+  .perk-text strong { color: var(--dark); font-weight: 600; display: block; margin-bottom: 2px; }
+  .form-container { border-radius: 24px; overflow: hidden; box-shadow: 0 16px 48px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.06); }
+  .form-container iframe { width: 100%; height: 820px; border: none; display: block; }
+
+  @media (max-width: 900px) {
+    .hero-values { display: none; }
+    .chi-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    .youtube-layout { grid-template-columns: 1fr; }
+    .tesseramento-layout { grid-template-columns: 1fr; }
+    .form-container iframe { height: 700px; }
+  }
+
   /* CONTATTI */
   #contatti { background: var(--dark); color: white; text-align: center; position: relative; overflow: hidden; }
   #contatti::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(232,65,122,0.2), transparent 70%); top: -200px; left: -100px; }
@@ -747,6 +773,51 @@
     </div>
   </div>
 </section>
+
+<!-- TESSERAMENTO -->
+<section id="tesseramento" aria-labelledby="tesseramento-title">
+  <div class="tesseramento-inner">
+    <div class="tesseramento-header">
+      <div class="section-label" aria-hidden="true">Diventa Socio</div>
+      <h2 id="tesseramento-title">Tessera ti ad <em>Aurora</em></h2>
+    </div>
+    <div class="tesseramento-layout">
+      <div>
+        <div class="tesseramento-text">
+          <p><strong>Tesserarsi ad Aurora per le Marche</strong> significa far parte di una comunità attiva, democratica e radicata nel territorio. Non è solo un gesto formale: è una scelta di partecipazione civile.</p>
+          <p>Compilando il modulo entri ufficialmente nell'associazione e puoi prendere parte alle nostre iniziative, agli eventi, ai gruppi di studio e alle assemblee.</p>
+        </div>
+        <div class="tesseramento-perks">
+          <div class="perk-item">
+            <div class="perk-icon">🗳️</div>
+            <div class="perk-text"><strong>Partecipazione attiva</strong>Diritto di voto nelle assemblee e nelle decisioni associative.</div>
+          </div>
+          <div class="perk-item">
+            <div class="perk-icon">📣</div>
+            <div class="perk-text"><strong>Accesso agli eventi</strong>Inviti in anteprima a dibattiti, incontri e iniziative culturali.</div>
+          </div>
+          <div class="perk-item">
+            <div class="perk-icon">🤝</div>
+            <div class="perk-text"><strong>Rete di persone</strong>Entra in contatto con una comunità di cittadini impegnati nelle Marche.</div>
+          </div>
+          <div class="perk-item">
+            <div class="perk-icon">💡</div>
+            <div class="perk-text"><strong>Gruppi tematici</strong>Partecipa ai tavoli di lavoro su casa, sanità, ambiente e cultura civica.</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-container">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfxn-CCdgl1MxD0f9iRr97fZAHCtC05N9QMcbcpJ4z1-PZbXw/viewform?embedded=true"
+          title="Modulo di tesseramento Aurora per le Marche"
+          loading="lazy"
+          aria-label="Modulo di iscrizione all'associazione Aurora per le Marche">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- CONTATTI -->
 <section id="contatti" aria-labelledby="contatti-title">
