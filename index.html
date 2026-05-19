@@ -701,7 +701,12 @@
     </article>
 
 
- <article class="activity-card">
+<div class="flip-card-container">
+  <input type="checkbox" id="flip-toggle-1" class="flip-toggle">
+  <label for="flip-toggle-1" class="activity-card">
+    
+    <!-- PARTE DAVANTI DELLA CARD -->
+    <div class="card-front">
       <div class="activity-banner">
         <img src="img/carceri-aurora-radicali.png"
              alt="Visita al Carcere di Montacuto"
@@ -718,7 +723,25 @@
           <span>19 Maggio 2026</span>
         </div>
       </div>
-    </article>
+    </div>
+
+    <!-- PARTE DIETRO DELLA CARD (COMPARE QUANDO SI GIRA) -->
+    <div class="card-back">
+      <div class="card-back-content">
+        <h3>Visita a Montacuto</h3>
+        <span class="click-hint">Clicca per tornare indietro</span>
+        <hr>
+        <div class="scrollable-text">
+          <p>Nella giornata di ieri, una delegazione di AURORA per le Marche e Radicali Macerata si è recata presso la Casa circondariale di Ancona Montacuto...</p>
+          <p>Il comandante De Filippis e gli agenti ci hanno permesso di visitare le sezioni. Le persone detenute hanno segnalato la mancanza di acqua calda e gravi problemi di comunicazione con l'amministrazione ("domandine" senza risposta).</p>
+          <p>Nella IV sezione della media sicurezza sono stati registrati sei casi di scabbia. Le celle sono piccole e il sovraffollamento segue il trend nazionale: 343 posti occupati a fronte di una capienza regolamentare di 256.</p>
+          <p>Il taglio dei fondi ostacola la rieducazione (Art. 27 Cost.). Nonostante le difficoltà, la gentilezza dimostrataci è stata toccante, richiamando alla mente lo stile di Marco Pannella e Rita Bernardini.</p>
+        </div>
+      </div>
+    </div>
+
+  </label>
+</div>
 
     <article class="activity-card">
       <div class="activity-banner">
