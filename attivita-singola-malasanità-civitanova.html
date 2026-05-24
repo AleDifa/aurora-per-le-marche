@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>48 ore su una barella – Aurora per le Marche</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --aurora-purple: #2563c7;
+      --aurora-purple-light: #4f8ef7;
+      --aurora-magenta: #e8417a;
+      --aurora-gold: #f0c040;
+      --aurora-bg: #f8f7f5;
+      --aurora-surface: #ffffff;
+      --aurora-text: #111827;
+      --aurora-muted: #6b7280;
+      --aurora-border: #e5e7eb;
+      --aurora-red: #dc2626;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--aurora-bg);
+      color: var(--aurora-text);
+    }
+
+    /* ── TOP RIBBON ── */
+    .top-ribbon {
+      background: #2563c7;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .ribbon-left { display: flex; align-items: center; gap: 1rem; }
+
+    .ribbon-date { opacity: 0.8; font-weight: 400; }
+
+   
+
+    @keyframes blink { 50% { opacity: 0.5; } }
+
+    /* ── LAYOUT ── */
+    .page-layout {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* ── ARTICLE ── */
+    .article-wrap {}
+
+
+    .article-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--aurora-text);
+      margin-bottom: 0.9rem;
+      letter-spacing: -0.5px;
+    }
+
+    .article-subtitle {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.15rem;
+      color: #4b5563;
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+      border-left: 3px solid var(--aurora-purple);
+      padding-left: 1rem;
+    }
+
+    /* META BAR */
+    .meta-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      border-top: 1px solid var(--aurora-border);
+      border-bottom: 1px solid var(--aurora-border);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .meta-left { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+
+    .meta-author { font-size: 13px; font-weight: 600; color: var(--aurora-purple); }
+
+    .meta-date, .meta-location {
+      font-size: 12px;
+      color: var(--aurora-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .meta-date svg, .meta-location svg { width: 13px; height: 13px; }
+
+    .share-btns { display: flex; gap: 0.5rem; }
+
+    .share-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid var(--aurora-border);
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: var(--aurora-muted);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .share-btn:hover { border-color: var(--aurora-purple); color: var(--aurora-purple); }
+
+    /* HERO */
+    .article-hero {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .img-caption {
+      font-size: 11.5px;
+      color: var(--aurora-muted);
+      margin-bottom: 1.75rem;
+      font-style: italic;
+    }
+
+    /* BODY TEXT */
+    .article-body {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #2d2d2d;
+    }
+
+    .article-body p { margin-bottom: 1.3rem; }
+
+    .article-body p:first-child::first-letter {
+      font-size: 3.2rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      float: left;
+      line-height: 0.8;
+      margin: 0.1em 0.1em 0 0;
+      color: var(--aurora-purple);
+    }
+
+    .article-body strong { font-weight: 600; color: var(--aurora-text); }
+
+    .article-body a { color: var(--aurora-purple); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* PULL QUOTE */
+    .pull-quote {
+      border-left: 4px solid var(--aurora-purple);
+      background: linear-gradient(90deg, rgba(124,58,237,0.05), transparent);
+      padding: 1.2rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: var(--aurora-purple);
+      margin: 0 !important;
+    }
+
+    .pull-quote cite {
+      display: block;
+      font-size: 12px;
+      color: var(--aurora-muted);
+      margin-top: 0.5rem;
+      font-style: normal;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* DIVIDER */
+    .divider { border: none; border-top: 1px solid var(--aurora-border); margin: 2rem 0; }
+
+    /* MEDIA SECTION */
+    .related-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--aurora-purple);
+      display: inline-block;
+    }
+
+    .related-cards { display: flex; flex-direction: column; gap: 1rem; }
+
+    .related-card {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 0.9rem;
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid var(--aurora-border);
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.2s;
+    }
+
+    .related-card:hover { box-shadow: 0 4px 16px rgba(124,58,237,0.1); }
+
+    .related-img-placeholder {
+      width: 72px;
+      height: 56px;
+      background: linear-gradient(135deg, #2563c7, #e8417a);
+      border-radius: 4px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .related-info {}
+    .related-tag {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--aurora-purple);
+      margin-bottom: 0.3rem;
+    }
+
+    .related-title {
+      font-size: 13.5px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--aurora-text);
+    }
+
+    .related-source {
+      font-size: 11px;
+      color: var(--aurora-muted);
+      margin-top: 0.3rem;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 40px;
+    }
+
+    .sidebar-widget {
+      background: #fff;
+      border: 1px solid var(--aurora-border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .widget-header {
+      background: var(--aurora-purple);
+      color: #fff;
+      padding: 0.65rem 1rem;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .widget-body { padding: 1rem; }
+
+    .widget-body p {
+      font-size: 13px;
+      color: var(--aurora-muted);
+      line-height: 1.55;
+      margin-bottom: 0.75rem;
+    }
+
+    .widget-btn {
+      display: block;
+      text-align: center;
+      background: var(--aurora-purple);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.55rem 1rem;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .widget-btn:hover { opacity: 0.85; }
+
+    .widget-social { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 0.5rem;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .social-btn:hover { opacity: 0.85; }
+    .social-fb { background: #1877f2; color: #fff; }
+    .social-ig { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: #fff; }
+    .social-yt { background: #ff0000; color: #fff; grid-column: 1 / -1; }
+
+    .info-list { list-style: none; }
+    .info-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--aurora-muted);
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--aurora-border);
+      line-height: 1.4;
+    }
+
+    .info-list li:last-child { border-bottom: none; }
+    .info-list .info-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+    .info-list strong { color: var(--aurora-text); font-weight: 600; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--aurora-text);
+      color: rgba(255,255,255,0.6);
+      padding: 2.5rem 2rem;
+      margin-top: 4rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    footer p { font-size: 13px; }
+    footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .page-layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+    }
+
+    @media (max-width: 600px) {
+      .article-title { font-size: 1.6rem; }
+      .pull-quote p { font-size: 1.05rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP RIBBON -->
+  <div class="top-ribbon">
+    <div class="ribbon-left">
+      <span>Aurora per le Marche </span>
+    </div>
+    <span class="ribbon-date">Maggio 2026</span>
+  </div>
+
+  <!-- MAIN LAYOUT (no header, no breadcrumb) -->
+  <div class="page-layout">
+
+    <!-- ARTICLE -->
+    <article class="article-wrap">
+
+
+      <h1 class="article-title">
+        48 ore su una barella a Civitanova Marche: denuncia, risposte e ciò che resta irrisolto
+      </h1>
+
+      <p class="article-subtitle">
+        Una donna di circa settant'anni rimasta oltre due giorni in pronto soccorso senza un posto letto disponibile in tutta la regione. La notizia ha raggiunto le testate nazionali. Aurora per le Marche risponde alle repliche istituzionali e ribadisce le proprie convinzioni sulla sanità pubblica.
+      </p>
+
+      <!-- META BAR -->
+      <div class="meta-bar">
+        <div class="meta-left">
+          <span class="meta-author">Aurora per le Marche</span>
+          <span class="meta-date">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Maggio 2026
+          </span>
+          <span class="meta-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Civitanova Marche, Marche
+          </span>
+        </div>
+        <div class="share-btns">
+          <a href="#" class="share-btn" title="Condividi su Facebook">f</a>
+          <a href="#" class="share-btn" title="Condividi su X">𝕏</a>
+          <a href="#" class="share-btn" title="Condividi su WhatsApp">✉</a>
+        </div>
+      </div>
+
+      <!-- HERO -->
+      <img class="article-hero" src="img/shock-settico-resta-48-ore-barella.png" alt="Pronto soccorso di Civitanova Marche">
+      <p class="img-caption">
+        Pronto soccorso di Civitanova Marche · Maggio 2026
+      </p>
+
+      <!-- ARTICLE BODY -->
+      <div class="article-body">
+        <p>
+          Nei giorni scorsi abbiamo reso pubblica la testimonianza dei familiari di una donna di circa settant'anni, rimasta oltre 48 ore su una barella al pronto soccorso di Civitanova Marche, senza un posto letto disponibile in tutta la regione. La notizia è stata ripresa da decine di testate, ben oltre i confini regionali. Lo consideriamo un segnale: quando si denuncia con chiarezza, la gente riconosce la propria esperienza e risponde.
+        </p>
+
+        <div class="pull-quote">
+          <p>"Quando si denuncia con chiarezza, la gente riconosce la propria esperienza e risponde."</p>
+          <cite>— Aurora per le Marche, Maggio 2026</cite>
+        </div>
+
+        <p>
+          Alla nostra denuncia sono seguite le repliche del dottor Domenico Sicolo, direttore del Dipartimento emergenze, e di Rita Curto, dirigente del pronto soccorso, che hanno spiegato che la paziente non sarebbe stata abbandonata e che il problema reale è il boarding. Prendiamo atto. Ma non possiamo accettarle come risposta sufficiente.
+        </p>
+
+        <p>
+          La paziente è arrivata con pressione molto bassa, confusa, incapace di ricordare la propria caduta. In medicina d'urgenza questi sono segnali che richiedono attenzione immediata. Nonostante questo, è stata classificata con codice azzurro anziché con codice rosso. Non si conosceva ancora la diagnosi; lo shock settico è emerso solo undici ore dopo, con la visita, la TAC e le analisi. Ed è esattamente questo il punto: sono state quelle undici ore trascorse senza una rivalutazione approfondita a permettere alla situazione di aggravarsi. <strong>Il boarding è un problema reale. Ma non può diventare la giustificazione per tutto.</strong>
+        </p>
+
+        <p>
+          Su questo quadro si staglia la figura dell'assessore regionale alla sanità Paolo Calcinaro, nominato con oltre 9.300 preferenze nella giunta Acquaroli. Un politico, non un medico né un tecnico della sanità, che all'atto dell'insediamento aveva detto: <em>"Risolverò ogni situazione? Certamente no. Migliorerò la situazione? Lo spero."</em> Una vera e propria ammissione di impotenza. E di fronte all'emergenza dei pronto soccorso intasati ha risposto che i posti letto arriveranno "nei prossimi anni." Nel frattempo, i pazienti aspettano sulle barelle.
+        </p>
+
+        <p>
+          Vogliamo ribadire tre convinzioni che guidano il nostro lavoro, al di là di questo singolo episodio.
+        </p>
+
+        <p>
+          <strong>La sanità pubblica va finanziata con continuità e determinazione.</strong> Non è una questione di appartenenza; noi non abbiamo ideologie, abbiamo idee, e su questo non c'è posizione politica che tenga. Il diritto alla salute è universale, e garantirlo è la prima responsabilità di qualunque amministrazione pubblica. Non si può ragionare di bilanci regionali senza mettere la sanità al primo posto.
+        </p>
+
+        <p>
+          <strong>Chi amministra la salute dei cittadini deve avere gli strumenti per farlo, e deve avere chiaro come farlo.</strong> Non bastano le buone intenzioni né i comunicati stampa. Servono competenza, visione e la volontà di agire nell'immediato, non di rinviare a un futuro indistinto.
+        </p>
+
+        <p>
+          <strong>Denunciare episodi come questo non è polemizzare: è costruire.</strong> È un atto di responsabilità civile. Ogni voce che si alza fa capire che questi episodi non sono normali e non vanno accettati in silenzio. AURORA per le Marche continuerà a raccogliere queste testimonianze e a portarle a destinazione.
+        </p>
+      </div>
+
+      <hr class="divider">
+
+      <!-- MEDIA SECTION -->
+      <div class="related-section">
+        <h3>Notizie riportate dai media</h3>
+        <div class="related-cards">
+
+         <a href="https://picchionews.it/sanita/lo-choc-settico-e-l-attesa-infinita-oltre-48-ore-in-barella-prima-del-ricovero-la-denuncia-di-aurora" target="_blank" class="related-card">
+  <div class="related-info">
+   <!-- <div class="related-tag">Sanità</div>-->
+    <div class="related-title">Lo choc settico e l'attesa infinita. Oltre 48 ore in barella prima del ricovero: la denuncia di Aurora</div>
+    <div class="related-source">Picchio News</div>
+  </div>
+</a>
+
+<a href="https://www.cronachemaceratesi.it/2026/05/22/due-giorni-in-barella-al-pronto-soccorso-era-in-shock-settico/2067638/" target="_blank" class="related-card">
+  <div class="related-info">
+    <div class="related-title">Due giorni in barella al pronto soccorso: «Era in shock settico»</div>
+    <div class="related-source">Cronache Maceratesi</div>
+  </div>
+</a>
+
+<a href="https://www.viverecivitanova.it/2026/05/22/48-ore-su-una-barella-in-pronto-soccorso-con-uno-shock-settico-aurora-ennesimo-caso-di-malasanit-marchigiana/88428/" target="_blank" class="related-card">
+  <div class="related-info">
+    <div class="related-title">48 ore su una barella in pronto soccorso con uno shock settico: Aurora, ennesimo caso di malasanità marchigiana</div>
+    <div class="related-source">Vivere Civitanova</div>
+  </div>
+</a>
+
+<a href="https://www.anconatoday.it/attualita/associazione-aurora-denuncia-malasanita-ospedale-civitanova-marche.html" target="_blank" class="related-card">
+  <div class="related-info">
+    <div class="related-title">Associazione Aurora denuncia la malasanità all'ospedale di Civitanova Marche</div>
+    <div class="related-source">AnconaToday</div>
+  </div>
+</a>
+
+<a href="https://www.viveresenigallia.it/altrigiornali/4/88427-2026" target="_blank" class="related-card">
+  <div class="related-info">
+    <div class="related-title">48 ore su una barella in pronto soccorso con uno shock settico: Aurora, ennesimo caso di malasanità marchigiana</div>
+    <div class="related-source">Vivere Senigallia</div>
+  </div>
+</a>
+
+<a href="https://www.viveremarche.it/2026/05/22/civitanova-48-ore-su-una-barella-in-pronto-soccorso-con-uno-shock-settico-aurora-ennesimo-caso-di-malasanit-marchigiana/88427/" target="_blank" class="related-card">
+  <div class="related-info">
+    <div class="related-title">Civitanova, 48 ore su una barella in pronto soccorso con uno shock settico: Aurora, ennesimo caso di malasanità marchigiana</div>
+    <div class="related-source">Vivere Marche</div>
+  </div>
+</a>
+
+<a href="https://www.facebook.com/share/1E2Vz7PE1s/" target="_blank" class="related-card">
+  <div class="related-info">
+    <div class="related-title">70enne 48 ore in barella al pronto soccorso: la denuncia di Aurora</div>
+    <div class="related-source">MondoNews</div>
+  </div>
+</a>
+
+<a href="https://jant.it/notizie/choc-settico-70enne-per-48-ore-in-barella-al-pronto-soccorso" target="_blank" class="related-card">
+  <div class="related-info">
+    <div class="related-title">Choc settico, 70enne per 48 ore in barella al pronto soccorso</div>
+    <div class="related-source">Jant.it</div>
+  </div>
+</a>
+
+<a href="https://youtvrs.it/choc-settico-70enne-per-48-ore-in-barella-al-pronto-soccorso/" target="_blank" class="related-card">
+  <div class="related-info">
+    <div class="related-title">Choc settico, 70enne per 48 ore in barella al pronto soccorso</div>
+    <div class="related-source">YouTV RS</div>
+  </div>
+</a>
+
+<a href="https://www.corriereadriatico.it/macerata/civitanova_choc_settico_barella_pronto_soccorso_proteste_ira-9548792.html" target="_blank" class="related-card">
+  <div class="related-info">
+    <div class="related-title">Civitanova, choc settico e barella al pronto soccorso: proteste e ira</div>
+    <div class="related-source">Corriere Adriatico</div>
+  </div>
+</a>
+
+<a href="https://share.google/loaqKpfWSAqoYcH75" target="_blank" class="related-card">
+  <div class="related-info">
+    <div class="related-title">Resta due giorni in barella nonostante lo shock settico</div>
+    <div class="related-source">CivitanovaLive</div>
+  </div>
+</a>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- AURORA INFO -->
+      <div class="sidebar-widget">
+        <div class="widget-header">🌟 Chi siamo</div>
+        <div class="widget-body">
+          <p>Aurora per le Marche è un'associazione culturale che riunisce persone e movimenti su tematiche sociali condivise: democratica, laica, federalista e impegnata per le Marche e l'Europa.</p>
+          <a href="https://www.auroraperlemarche.eu/#chi-siamo" class="widget-btn">Scopri Aurora →</a>
+        </div>
+      </div>
+
+      <!-- INFO EVENTO -->
+      <div class="sidebar-widget">
+        <div class="widget-header">📋 Info</div>
+        <div class="widget-body">
+          <ul class="info-list">
+            <li>
+              <span class="info-icon">🏷️</span>
+              <div><strong>Tipo:</strong> Denuncia pubblica</div>
+            </li>
+            <li>
+              <span class="info-icon">📍</span>
+              <div><strong>Luogo:</strong> Civitanova Marche</div>
+            </li>
+            <li>
+              <span class="info-icon">🗓</span>
+              <div><strong>Data:</strong> Maggio 2026</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SOCIAL -->
+      <div class="sidebar-widget">
+        <div class="widget-header">📲 Seguici</div>
+        <div class="widget-body">
+          <p>Resta aggiornato sulle nostre attività e iniziative.</p>
+          <div class="widget-social">
+            <a href="https://www.facebook.com/AuroraPerLeMarche" class="social-btn social-fb">f Facebook</a>
+            <a href="https://www.instagram.com/aurora_per_le_marche?brid=YWdncwExf4Q_dJbzfYbD1SZZZnzS" class="social-btn social-ig">◎ Instagram</a>
+            <a href="https://www.youtube.com/@AuroraPerLeMarche" class="social-btn social-yt">▶ YouTube</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TESSERAMENTO -->
+      <div class="sidebar-widget">
+        <div class="widget-header">🤝 Unisciti ad Aurora</div>
+        <div class="widget-body">
+          <p>Vuoi fare parte della nostra associazione e contribuire alle attività sul territorio marchigiano?</p>
+          <a href="https://www.auroraperlemarche.eu/#tesseramento" class="widget-btn">Tessera 2026 →</a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div><!-- /.page-layout -->
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        Aurora per le Marche
+      </div>
+      <p>Associazione Culturale ·  Marche · <a href="https://www.auroraperlemarche.eu/">auroraperlemarche.eu</a></p>
+      <p><a href="attivita-archivio.html">← Torna alle attività</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

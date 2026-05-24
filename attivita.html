@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le nostre Attività – Aurora per le Marche</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:       #e8326a;
+      --pink-light: #fce8f0;
+      --blue-light: #deeaf8;
+      --lavender:   #ede8f8;
+      --sand:       #f4f1ec;
+      --text:       #1a1a2e;
+      --muted:      #6b7280;
+      --tag-bg-d:   #fde8f0;
+      --tag-bg-c:   #ddf0fb;
+      --tag-bg-t:   #fff3e0;
+      --radius:     18px;
+      --card-shadow: 0 4px 24px rgba(0,0,0,.07);
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #fafafa;
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER SECTION ── */
+    .section-header {
+      padding: 64px 48px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--pink);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--pink);
+      border-radius: 2px;
+    }
+
+    .section-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .section-title em {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--pink);
+    }
+
+    .section-desc {
+      max-width: 360px;
+      font-size: .92rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .section-desc a { color: var(--pink); text-decoration: none; }
+
+    /* ── GRID ── */
+    .activities-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 48px 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 28px;
+      /* Le card si allineano per altezza righe, ma ogni card cresce liberamente */
+      align-items: start;
+    }
+
+    /* ── CARD ── */
+    .activity-card {
+      background: #fff;
+      border-radius: var(--radius);
+      /* overflow: hidden taglia il contenuto — non usarlo sulla card base */
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(0,0,0,.11);
+    }
+
+    /* ── CARD CON IFRAME: altezza automatica, niente clip ── */
+    .activity-card.card-social {
+      overflow: visible;          /* permette al contenuto di crescere */
+      /* Il border-radius lo gestiamo con clip-path così non tagliamo il contenuto */
+      border-radius: var(--radius);
+      background: transparent;    /* la card stessa è trasparente */
+      box-shadow: none;           /* l'iframe porta il suo sfondo */
+    }
+
+    .activity-card.card-social:hover {
+      transform: translateY(-4px);
+      box-shadow: none;
+    }
+
+    /* Wrapper che racchiude l'iframe e gli dà il border-radius senza tagliare */
+    .iframe-wrapper {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      line-height: 0;
+      /* L'iframe FB è 500px wide. Calcoliamo lo scale per farlo stare
+         nella colonna. Usiamo JS sotto per renderlo dinamico,
+         ma partiamo con un valore di fallback. */
+      --fb-w: 500;   /* larghezza dichiarata dell'iframe */
+    }
+
+    .iframe-wrapper iframe {
+      display: block;
+      width: 500px;          /* larghezza nativa FB */
+      height: 781px;         /* altezza nativa FB */
+      border: none;
+      overflow: hidden;
+      transform-origin: top left;
+      /* il transform viene applicato via JS; fallback statico: */
+      transform: scale(0.62);
+    }
+
+    /* ── BANNER ── */
+    .activity-banner {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .activity-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .banner-fallback {
+      font-size: 3.2rem;
+      line-height: 1;
+      z-index: 1;
+    }
+
+    /* banner colour variants */
+    .activity-card:nth-child(3n+1) .activity-banner { background: var(--pink-light); }
+    .activity-card:nth-child(3n+2) .activity-banner { background: var(--blue-light); }
+    .activity-card:nth-child(3n)   .activity-banner { background: var(--lavender); }
+
+    /* ── BODY ── */
+    .activity-body {
+      padding: 22px 22px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    /* ── TAG ── */
+    .activity-tag {
+      display: inline-block;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      width: fit-content;
+    }
+
+    .tag-dibattito      { background: var(--tag-bg-d); color: var(--pink); }
+    .tag-commemorazione { background: var(--tag-bg-c); color: #1a6ea8; }
+    .tag-tematica       { background: var(--tag-bg-t); color: #b45309; }
+    .tag-evento         { background: var(--tag-bg-t); color: #b45309; }
+
+    /* ── TITLE & TEXT ── */
+    .activity-body h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+
+    .activity-body p {
+      font-size: .85rem;
+      line-height: 1.65;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    /* ── META ── */
+    .activity-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: .78rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .activity-meta span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ── CTA BUTTON ── */
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      padding: 8px 18px;
+      border: 1.5px solid var(--pink);
+      border-radius: 24px;
+      background: transparent;
+      color: var(--pink);
+      font-size: .8rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      width: fit-content;
+      transition: background .18s, color .18s;
+    }
+
+    .btn-outline:hover {
+      background: var(--pink);
+      color: #fff;
+    }
+
+    .activity-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      padding: 8px 18px;
+      border: 1.5px solid var(--pink);
+      border-radius: 24px;
+      background: transparent;
+      color: var(--pink);
+      font-size: .8rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      width: fit-content;
+      transition: background .18s, color .18s;
+    }
+
+    .activity-link:hover {
+      background: var(--pink);
+      color: #fff;
+    }
+
+    @media (max-width: 700px) {
+      .section-header { padding: 40px 20px 28px; }
+      .activities-grid { padding: 0 20px 60px; gap: 20px; }
+      .section-title { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <div class="section-header">
+      <div class="eyebrow">Cosa facciamo</div>
+      <h2 class="section-title">Le nostre <em>Attività</em></h2>
+      <p class="section-desc">
+        Dibattiti, commemorazioni, incontri pubblici: Aurora agisce sul territorio
+        marchigiano per costruire cultura civica e partecipazione attiva ad Ancona
+        e nelle Marche.
+      </p>
+    </div>
+
+    <div class="activities-grid">
+
+      <!-- Card normale -->
+      <article class="activity-card">
+        <div class="activity-banner">
+          <img src="img/" alt="Choc settico, 70enne per 48 ore in barella al pronto soccorso"
+               width="400" height="200" onerror="this.style.display='none'">
+          <div class="banner-fallback" aria-hidden="true">🌸</div>
+        </div>
+        <div class="activity-body">
+          <span class="activity-tag tag-evento">Tematica</span>
+          <h3>La denuncia di Aurora per le Marche: "sistema sanitario al collasso"</h3>
+          <p>Abbiamo reso pubblica la testimonianza dei familiari di una donna di circa settant'anni, rimasta oltre 48 ore su una barella al pronto soccorso di Civitanova Marche, senza un posto letto disponibile in tutta la regione. <br><br>La notizia è stata ripresa da decine di testate, ben oltre i confini regionali. È un segnale: quando si denuncia con chiarezza, la gente riconosce la propria esperienza e risponde.</p>
+          <div class="activity-meta">
+            <span>📍 Civitanova Marche</span>
+            <span>🗓 19/ 20 Maggio 2026</span>
+          </div>
+          <a href="attivita-singola-malasanità-civitanova.html" target="_blank" rel="noopener" class="btn-outline">
+            🗞️ Leggi l'articolo completo
+          </a>
+        </div>
+      </article>
+
+      <!-- Card social Facebook: classe dedicata + wrapper interno -->
+      <article class="activity-card card-social">
+        <div class="iframe-wrapper">
+          <iframe
+            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FAuroraPerLeMarche%2Fposts%2Fpfbid023ru2SL5PJLv8vBovJ3VvmEdrY1sHQZfsMFD3nKaP6D3v7Miwa1YPyJmDfwRqRTrnl&show_text=true&width=500"
+            width="500"
+            height="781"
+            scrolling="no"
+            frameborder="0"
+            allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+          </iframe>
+        </div>
+      </article>
+
+      
+      <article class="activity-card">
+        <div class="activity-banner">
+          <img src="img/anche-l-associazione-aurora-per-le-marche-contro-l-iniziativa-al-liceo-leopardi-sull-ucraina-sbilamciata-verso-la-russa.jpg"
+               alt="Aurora per le Marche sul Liceo Leopardi di Recanati"
+               width="400" height="200" onerror="this.style.display='none'">
+          <div class="banner-fallback" aria-hidden="true">🗞️</div>
+        </div>
+        <div class="activity-body">
+          <span class="activity-tag tag-commemorazione">Rassegna Stampa</span>
+          <h3>Aurora per le Marche sul Liceo Leopardi di Recanati</h3>
+          <p>Aurora si è espressa pubblicamente contro un incontro tenuto al Liceo Leopardi di Recanati, organizzato da una testata accusata di diffondere contenuti filorussi. Il Presidente Roberto Palumbo e la segretaria Martina Bonci hanno chiesto chiarezza sulla vicenda.</p>
+          <div class="activity-meta">
+            <span>📍 Recanati</span>
+            <span>🗓 12 Febbraio 2026</span>
+          </div>
+          <a href="https://www.ilcittadinodirecanati.it/notizie-recanati/94496-anche-l-associazione-aurora-per-le-marche-contro-l-iniziativa-al-liceo-leopardi-sull-ucraina-sbilamciata-verso-la-russa"
+             target="_blank" rel="noopener" class="btn-outline">
+            🗞️ Leggi l'articolo completo 
+          </a>
+        </div>
+      </article>
+
+      <!-- Card normale -->
+      <article class="activity-card">
+        <div class="activity-banner">
+          <img src="img/ma-quale-casa.jpg" alt="Emergenza abitativa nella regione Marche"
+               width="400" height="200" onerror="this.style.display='none'">
+          <div class="banner-fallback" aria-hidden="true">🌸</div>
+        </div>
+        <div class="activity-body">
+          <span class="activity-tag tag-evento">Tematica</span>
+          <h3>Emergenza abitativa</h3>
+          <p>Aurora ha partecipato all'evento "Ma quale casa ?" e mantiene attivo un gruppo di confronto e studio sulla materia come obiettivo di associazione per il 2026</p>
+          <div class="activity-meta">
+            <span>📍 Marche</span>
+            <span>🟢 attiva</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="activity-card">
+        <div class="activity-banner">
+          <img src="img/ospedale.png" alt="Emergenza Sanità Marche"
+               width="400" height="200" onerror="this.style.display='none'">
+          <div class="banner-fallback" aria-hidden="true">🌸</div>
+        </div>
+        <div class="activity-body">
+          <span class="activity-tag tag-evento">Tematica</span>
+          <h3>Sanità Marche</h3>
+          <p>Aurora si impegna per affrontare le problematiche strutturali delle strutture e del personale mantenendo questo tema come obiettivo di associazione per il 2026</p>
+          <div class="activity-meta">
+            <span>📍 Marche</span>
+            <span>🟢 attiva</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="activity-card">
+        <div class="activity-banner">
+          <img src="img/tassa-etica.jpg" alt="Dibattito Aurora per le Marche sulla tassa etica ad Ancona, febbraio 2026"
+               width="400" height="200" onerror="this.style.display='none'">
+          <div class="banner-fallback" aria-hidden="true">💰</div>
+        </div>
+        <div class="activity-body">
+          <span class="activity-tag tag-dibattito">Dibattito</span>
+          <h3>Dibattito pubblico sulla Tassa Etica</h3>
+          <p>L'evento ad Ancona ha analizzato la proposta di legge per abolire la "tassa etica", un'addizionale del 25% su IRPEF e IRES per il settore pornografico lecito.</p>
+          <div class="activity-meta">
+            <span>📍 Ancona</span>
+            <span>🗓 Febbraio 2026</span>
+          </div>
+          <a href="https://firmereferendum.giustizia.it/referendum/open/dettaglio-open/5600018"
+             target="_blank" rel="noopener noreferrer" class="activity-link"
+             aria-label="Firma il referendum per abolire la tassa etica sul portale del Ministero della Giustizia">
+            ✍️ Firma il referendum
+          </a>
+        </div>
+      </article>
+
+      <article class="activity-card">
+        <div class="activity-banner">
+          <img src="img/ucraina-commemorazione-ancona.jpg"
+               alt="Commemorazione del conflitto in Ucraina Co-organizzato da Aurora per le Marche, 24 febbraio 2026"
+               width="400" height="200" onerror="this.style.display='none'">
+          <div class="banner-fallback" aria-hidden="true">🕊️</div>
+        </div>
+        <div class="activity-body">
+          <span class="activity-tag tag-commemorazione">Commemorazione</span>
+          <h3>Commemorazione della Guerra in Ucraina</h3>
+          <p>Un momento di riflessione collettiva e memoria civile per non dimenticare il dramma del conflitto in Ucraina. Aurora co-organizza con l'associazione europea italia-ucraina Maidan della regione Marche una cerimonia pubblica per la solidarietà e la difesa dei diritti umani.</p>
+          <div class="activity-meta">
+            <span>📍 Marche</span>
+            <span>🗓 24 Febbraio 2026</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="activity-card">
+        <div class="activity-banner">
+          <img src="img/iran.jpg" alt="LUCI E VOCI PER LA LIBERTÀ DELL'IRAN"
+               width="400" height="200" onerror="this.style.display='none'">
+          <div class="banner-fallback" aria-hidden="true">🕊️</div>
+        </div>
+        <div class="activity-body">
+          <span class="activity-tag tag-commemorazione">Commemorazione</span>
+          <h3>Commemorazione contro il regime di Khamenei e per la memoria delle vittime</h3>
+          <p>Domenica 25 gennaio al Piazzale del Passetto di Ancona per accendere una luce contro la repressione in Iran. Insieme alla comunità iraniana, AURORA per le Marche e Associazione TerzaVia Odv organizzano questa manifestazione</p>
+          <div class="activity-meta">
+            <span>📍 Ancona</span>
+            <span>🗓 25 Gennaio 2026</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <script>
+    function scaleFbIframes() {
+      document.querySelectorAll('.iframe-wrapper').forEach(wrapper => {
+        const iframe = wrapper.querySelector('iframe');
+        if (!iframe) return;
+
+        const iframeNativeW = 500;   // larghezza dichiarata dall'iframe FB
+        const iframeNativeH = parseInt(iframe.getAttribute('height')) || 781;
+        const wrapperW      = wrapper.clientWidth;
+        const scale         = wrapperW / iframeNativeW;
+
+        iframe.style.transform       = `scale(${scale})`;
+        iframe.style.transformOrigin = 'top left';
+        iframe.style.width           = iframeNativeW + 'px';
+        iframe.style.height          = iframeNativeH + 'px';
+
+        // Aggiorna l'altezza del wrapper in base all'iframe scalato
+        wrapper.style.height = (iframeNativeH * scale) + 'px';
+      });
+    }
+
+    scaleFbIframes();
+    window.addEventListener('resize', scaleFbIframes);
+  </script>
+
+</body>
+</html>

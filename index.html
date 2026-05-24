@@ -238,6 +238,43 @@
   .activity-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600; color: var(--rose); text-decoration: none; margin-top: 14px; padding: 8px 16px; border: 1.5px solid rgba(232,65,122,0.3); border-radius: 50px; transition: background 0.2s, color 0.2s; }
   .activity-link:hover { background: var(--rose); color: white; border-color: var(--rose); }
 
+
+    /* BOTTONE ATTIVITA */
+
+.btn-attivita {
+  /* Impostazioni di layout per il centraggio */
+  display: flex;       /* Cambiato da inline-flex a flex */
+  width: fit-content;
+  margin: 0 auto;      /* Centra il bottone nel suo genitore */
+  
+  /* Stile estetico */
+  align-items: center; 
+  gap: 10px;
+  background: #ff0000; 
+  color: white;
+  padding: 15px 32px; 
+  border-radius: 50px;
+  font-family: 'Jost', sans-serif; 
+  font-weight: 700; 
+  font-size: 0.9rem;
+  text-decoration: none; 
+  letter-spacing: 0.3px;
+  box-shadow: 0 8px 30px rgba(255,0,0,0.4);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.btn-attivita:hover { 
+  transform: translateY(-2px); 
+  box-shadow: 0 12px 40px rgba(255,0,0,0.55); 
+  background: #cc0000; 
+}
+
+.btn-attivita svg { 
+  width: 20px; 
+  height: 20px; 
+  flex-shrink: 0; 
+}
+
   /* LIVE YOUTUBE */
   #live { background: white; }
   .live-header { margin-bottom: 60px; max-width: 700px; }
@@ -619,6 +656,27 @@
   </div>
 
   <div class="activities-grid">
+    <article class="activity-card">
+        <div class="activity-banner">
+          <img src="img/shock-settico-resta-48-ore-barella.png" alt="Choc settico, 70enne per 48 ore in barella al pronto soccorso"
+               width="400" height="200" onerror="this.style.display='none'">
+          <div class="banner-fallback" aria-hidden="true">🌸</div>
+        </div>
+        <div class="activity-body">
+          <span class="activity-tag tag-evento">Tematica</span>
+          <h3>La denuncia di Aurora per le Marche: "sistema sanitario al collasso"</h3>
+          <p>Abbiamo reso pubblica la testimonianza dei familiari di una donna di circa settant'anni, rimasta oltre 48 ore su una barella al pronto soccorso di Civitanova Marche, senza un posto letto disponibile in tutta la regione. <br><br>La notizia è stata ripresa da decine di testate, ben oltre i confini regionali. È un segnale: quando si denuncia con chiarezza, la gente riconosce la propria esperienza e risponde.</p>
+          <div class="activity-meta">
+            <span>📍 Civitanova Marche</span>
+            <span>🗓 19/ 20 Maggio 2026</span>
+          </div>
+          <a href="attivita-singola-malasanità-civitanova.html" target="_blank" rel="noopener" class="btn-outline">
+            🗞️ Leggi l'articolo completo
+          </a>
+        </div>
+      </article>
+    
+
 
     <article class="activity-card">
       <div class="activity-banner">
@@ -630,7 +688,7 @@
       </div>
       <div class="activity-body">
         <span class="activity-tag tag-dibattito">Dibattito</span>
-        <h3>Confronto sulla Tassa Etica</h3>
+        <h3>Confronto sulla Tassa Etica con i partiti</h3>
         <p>L'evento di Ancona ha analizzato la proposta di legge per abolire la "tassa etica", un'addizionale del 25% su IRPEF e IRES per il settore pornografico lecito. Il dibattito ha evidenziato come questa imposta sia discriminatoria: non colpisce in base alla capacità contributiva, ma applica un pregiudizio morale a un'attività lavorativa regolare.</p>
         <div class="activity-meta">
           <span>📍 Ancona</span>
@@ -663,114 +721,19 @@
       </div>
     </article>
 
-    <article class="activity-card">
-      <div class="activity-banner">
-        <img src="img/ma-quale-casa.jpg"
-             alt="Emergenza abitativa nella regione Marche"
-             width="400" height="200"
-             onerror="this.style.display='none'">
-        <div class="banner-fallback" aria-hidden="true">🌸</div>
-      </div>
-      <div class="activity-body">
-        <span class="activity-tag tag-evento">Tematica</span>
-        <h3>Emergenza abitativa</h3>
-        <p>Aurora ha partecipato all'evento "Ma quale casa ?" e mantiene attivo un gruppo di confronto e studio sulla materia come obiettivo di associazione per il 2026</p>
-        <div class="activity-meta">
-          <span>📍 Marche</span>
-          <span>🟢 attiva</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="activity-card">
-      <div class="activity-banner">
-        <img src="img/ospedale.png"
-             alt="Emergenza Sanità Marche"
-             width="400" height="200"
-             onerror="this.style.display='none'">
-        <div class="banner-fallback" aria-hidden="true">🌸</div>
-      </div>
-      <div class="activity-body">
-        <span class="activity-tag tag-evento">Tematica</span>
-        <h3>Sanità Marche</h3>
-        <p>Aurora si impegna per affrontare le problematiche strutturali delle strutture e del personale mantenendo questo tema come obiettivo di associazione per il 2026</p>
-        <div class="activity-meta">
-          <span>📍 Marche</span>
-          <span>🟢 attiva</span>
-        </div>
-      </div>
-    </article>
-
-<article class="activity-card">
-      <div class="activity-banner">
-        <img src="img/carceri-aurora-radicali.png"
-             alt="Visita al Carcere di Montacuto"
-             width="400" height="200"
-             onerror="this.style.display='none'">
-        <div class="banner-fallback" aria-hidden="true">🌸</div>
-      </div>
-      <div class="activity-body">
-        <span class="activity-tag tag-evento">Tematica</span>
-        <h3>Diritti e sovraffollamento: visita al carcere di Montacuto</h3>
-        <p>AURORA e Radicali Macerata riscontrano gravi criticità strutturali, igieniche e di sovraffollamento nella Casa circondariale di Ancona.</p>
-        <p>In foto con gli attivisti Emanuele Merio Martinelli, Veronica Petroncelli, Marta Mataloni e David Ruffini. Si ringrazia Filippo Blengino per la preziosa collaborazione.</p> 
-        <div class="activity-meta">
-          <span>📍 Marche</span>
-          <span>19 Maggio 2026</span>
-        </div>
-        <a href=""
-       target="_blank" rel="noopener" class="btn-outline">
-      🗞️ Leggi l'articolo
+<br>
+  </div>
+  <a href="attivita.html"
+         target="_blank" rel="noopener noreferrer"
+         class="btn-attivita"
+         aria-label="Guarda tutte le attività di Auora per le marche">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        </svg>
+        Guarda tutte le attività
       </a>
-      </div>
-    </article>
-
-    
-    <article class="activity-card">
-      <div class="activity-banner">
-        <img src="img/iran.jpg"
-             alt="LUCI E VOCI PER LA LIBERTÀ DELL'IRAN"
-             width="400" height="200"
-             onerror="this.style.display='none'">
-        <div class="banner-fallback" aria-hidden="true">🕊️</div>
-      </div>
-      <div class="activity-body">
-        <span class="activity-tag tag-commemorazione">Commemorazione</span>
-        <h3>Commemorazione contro il regime di Khamenei e per la memoria delle vittime</h3>
-        <p>Domenica 25 gennaio al Piazzale del Passetto di Ancona per accendere una luce contro la repressione in Iran. Insieme alla comunità iraniana, AURORA per le Marche e Associazione TerzaVia Odv organizzano questa manifestazione</p>
-        <div class="activity-meta">
-          <span>📍 Ancona</span>
-          <span>🗓 25 Gennaio 2026</span>
-        </div>
-      </div>
-    </article>
-
-
-  <article class="activity-card">
-  <div class="activity-banner">
-    <img src="img/anche-l-associazione-aurora-per-le-marche-contro-l-iniziativa-al-liceo-leopardi-sull-ucraina-sbilamciata-verso-la-russa.jpg"
-         alt="Aurora per le Marche sul Liceo Leopardi di Recanati"
-         width="400" height="200"
-         onerror="this.style.display='none'">
-    <div class="banner-fallback" aria-hidden="true">🗞️</div>
-  </div>
-  <div class="activity-body">
-    <span class="activity-tag tag-commemorazione">RASSEGNA STAMPA</span>
-    <h3>Aurora per le Marche sul Liceo Leopardi di Recanati</h3>
-    <p>Aurora si è espressa pubblicamente contro un incontro tenuto al Liceo Leopardi di Recanati, organizzato da una testata accusata di diffondere contenuti filorussi. Il Presidente Roberto Palumbo e la segretaria Martina Bonci hanno chiesto chiarezza sulla vicenda, a fianco dell'europarlamentare Federica Onori e di Azione Macerata.</p>
-    <div class="activity-meta">
-      <span>📍 Recanati</span>
-      <span>🗓 12 Febbraio 2026</span>
-    </div>
-    <a href="https://www.ilcittadinodirecanati.it/notizie-recanati/94496-anche-l-associazione-aurora-per-le-marche-contro-l-iniziativa-al-liceo-leopardi-sull-ucraina-sbilamciata-verso-la-russa"
-       target="_blank" rel="noopener" class="btn-outline">
-      🗞️ Leggi l'articolo
-    </a>
-  </div>
-</article>
-
-  </div>
 </section>
+
+
 
 <!-- LIVE YOUTUBE -->
 <section id="live" aria-labelledby="live-title">
