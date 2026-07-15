@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.auroraperlemarche.eu/sitemap.xml
+Sitemap: https://www.auroraperlemarche.eu/sitemap_2.xml
