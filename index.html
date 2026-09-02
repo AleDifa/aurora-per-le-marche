@@ -87,36 +87,175 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Jost', sans-serif; color: var(--dark); background: var(--soft); overflow-x: hidden; }
+ 
+body {
+  font-family: 'Jost', sans-serif;
+  background: linear-gradient(
+    160deg, 
+    #eff6ff 0%, 
+    #fdf2f7 20%, 
+    #ffffff 45%, 
+    #f9f6ff 70%, 
+    #f7f4f0 100%
+  );
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+/* --- Struttura Navbar di base --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1rem 2rem;
+}
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(232,65,122,0.15);
-    padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; height: 70px;
-  }
-  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .logo-circle {
-    width: 44px; height: 44px; border-radius: 50%; background: var(--gradient);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Playfair Display', serif; font-weight: 900; color: white;
-    font-size: 18px; letter-spacing: -1px; flex-shrink: 0;
-  }
-  .nav-brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.1rem; color: var(--dark); line-height: 1.2; }
-  .nav-brand span { display: block; font-size: 0.7rem; font-family: 'Jost', sans-serif; font-weight: 400; color: var(--rose); letter-spacing: 2px; text-transform: uppercase; }
-  .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a { text-decoration: none; color: var(--mid); font-weight: 500; font-size: 0.9rem; letter-spacing: 0.5px; transition: color 0.2s; position: relative; }
-  .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: var(--gradient); transform: scaleX(0); transition: transform 0.2s; border-radius: 2px; }
-  .nav-links a:hover { color: var(--rose); }
-  .nav-links a:hover::after { transform: scaleX(1); }
+/* --- Pulsante Hamburger/Kebab (Nascosto su PC) --- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333; /* Cambia colore se lo sfondo è scuro */
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* --- Lista Link (Desktop) --- */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- NAV E HEADER (Desktop) --- */
+nav {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95); 
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(232, 65, 122, 0.15);
+  padding: 0 5vw; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  height: 70px;
+}
+
+.nav-logo { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  text-decoration: none; 
+}
+
+.logo-circle {
+  width: 44px; 
+  height: 44px; 
+  border-radius: 50%; 
+  background: var(--gradient);
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  font-family: 'Playfair Display', serif; 
+  font-weight: 900; 
+  color: white;
+  font-size: 18px; 
+  letter-spacing: -1px; 
+  flex-shrink: 0;
+}
+
+.nav-brand { 
+  font-family: 'Playfair Display', serif; 
+  font-weight: 700; 
+  font-size: 1.1rem; 
+  color: var(--dark); 
+  line-height: 1.2; 
+}
+
+.nav-brand span { 
+  display: block; 
+  font-size: 0.7rem; 
+  font-family: 'Jost', sans-serif; 
+  font-weight: 400; 
+  color: var(--rose); 
+  letter-spacing: 2px; 
+  text-transform: uppercase; 
+}
+
+.nav-links { 
+  display: flex; 
+  gap: 32px; 
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a { 
+  text-decoration: none; 
+  color: var(--mid); 
+  font-weight: 500; 
+  font-size: 0.9rem; 
+  letter-spacing: 0.5px; 
+  transition: color 0.2s; 
+  position: relative; 
+}
+
+.nav-links a::after { 
+  content: ''; 
+  position: absolute; 
+  bottom: -4px; 
+  left: 0; 
+  right: 0; 
+  height: 2px; 
+  background: var(--gradient); 
+  transform: scaleX(0); 
+  transition: transform 0.2s; 
+  border-radius: 2px; 
+}
+
+.nav-links a:hover { 
+  color: var(--rose); 
+}
+
+.nav-links a:hover::after { 
+  transform: scaleX(1); 
+}
+
+/* Pulsante hamburger nascosto su desktop */
+.menu-toggle {
+  display: none;
+}
+
 
   /* HERO */
   #home { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 80px 5vw 60px; }
-  .hero-bg { position: absolute; inset: 0; background: linear-gradient(160deg, #fdf2f7 0%, #eff6ff 60%, #fdf2f7 100%); z-index: 0; }
+  /*.hero-bg { position: absolute; inset: 0; background: linear-gradient(160deg, #fdf2f7 0%, #eff6ff 60%, #fdf2f7 100%); z-index: 0; }
+  
+  */
   .hero-orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.35; animation: float 8s ease-in-out infinite; }
+  
   .orb1 { width: 500px; height: 500px; background: var(--rose); top: -100px; right: -100px; animation-delay: 0s; }
-  .orb2 { width: 400px; height: 400px; background: var(--blue); bottom: -80px; left: 10%; animation-delay: 3s; }
+ 
+  .orb2 { width: 400px; height: 400px; background: var(--blue); bottom: 276px; left: 6%; animation-delay: 3s; }
+  
   @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
   .hero-content { position: relative; z-index: 1; max-width: 720px; animation: fadeUp 1s ease forwards; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
@@ -133,7 +272,7 @@
   .hero-values { position: absolute; right: 5vw; top: 40%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 16px; z-index: 1; animation: fadeUp 1.2s ease 0.3s both; }
   .value-pill { background: white; border-radius: 12px; padding: 14px 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border-left: 4px solid; font-size: 0.85rem; font-weight: 500; color: var(--mid); max-width: 220px; transition: transform 0.2s; }
   .value-pill:hover { transform: translateX(-4px); }
-  .value-pill:nth-child(1) { border-color: var(--rose); } .value-pill:nth-child(2) { border-color: var(--blue); }
+  .value-pill:nth-child(1) { border-color:  #ff7f00; } .value-pill:nth-child(2) { border-color: var(--blue); }
   .value-pill:nth-child(3) { border-color: #10b981; } .value-pill:nth-child(4) { border-color: var(--gold); }
   .value-pill:nth-child(5) { border-color: #8b5cf6; }
   .value-pill strong { display: block; color: var(--dark); margin-bottom: 2px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
@@ -146,33 +285,39 @@
   h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 24px; color: var(--dark); }
   h2 em { font-style: italic; color: var(--rose); }
 
-  /* CHI SIAMO */
+  /* CHI SIAMO
   #chi-siamo {
-    background: linear-gradient(180deg,
-      #f5edf3 0%,
-      #eef3fc 35%,
-      #f4f0fb 65%,
-      #ffffff 100%
-    );
-  }
+background: linear-gradient(160deg, #eff6ff 0%, #fdf2f7 10%, #ffffff 100%); }*/
+
   .chi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto; }
   .chi-text p { color: var(--mid); line-height: 1.9; margin-bottom: 20px; font-size: 1rem; font-weight: 300; }
   .chi-text p strong { color: var(--dark); font-weight: 600; }
   .vision-strip { background: var(--gradient); border-radius: 20px; padding: 36px 40px; color: white; }
   .vision-strip p { font-size: 1.05rem; line-height: 1.8; font-style: italic; opacity: 0.95; }
 
-  /* DIRETTIVO */
-  #direttivo {
-    background: linear-gradient(180deg,
-      #f9f6ff 0%,
-      #f6f9ff 30%,
-      #fafafa 65%,
-      #f7f4f0 100%
-    );
-  }
-  .direttivo-header { text-align: center; margin-bottom: 64px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .direttivo-header .section-label { justify-content: center; }
-  .direttivo-header .section-label::before { display: none; }
+/* --- Contenitori e Etichette (Centratura e Spaziatura) --- */
+.direttivo-header,
+.section-label,
+.live-title,
+.live-header,
+.attivita-header {
+  text-align: center;
+  justify-content: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 64px;
+}
+
+/* --- Rimozione dello pseudo-elemento ::before --- */
+.direttivo-header::before,
+.section-label::before,
+.live-title::before,
+.live-header::before,
+.attivita-header::before {
+  display: none;
+}
+
   .board-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; max-width: 1200px; margin: 0 auto; }
   .board-card { background: white; border-radius: 24px; padding: 36px 28px; text-align: center; border: 1px solid rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
   .board-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; }
@@ -196,6 +341,7 @@
   .board-card.tesoriere .board-role { color: #059669; }
   .board-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
   .board-card > p { font-size: 0.85rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
+  .board-card-member > p { font-size: 0.85rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
 
   /* MEMBRI DEL DIRETTIVO (senza carica) */
   .members-divider { max-width: 1200px; margin: 48px auto 32px; display: flex; align-items: center; gap: 16px; }
@@ -212,7 +358,7 @@
   .board-avatar-sm img { width: 100%; height: 100%; object-fit: cover; object-position: top center;  display: block; }
 
   .member-role-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #9ca3af; margin-bottom: 5px; display: block; }
-  .board-card-member h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--dark); line-height: 1.25; }
+  .board-card-member h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; color: var(--dark); line-height: 1.25; margin-bottom: 14px; }
 
   /* ATTIVITÀ */
   #attivita { background: white; }
@@ -337,17 +483,7 @@
   .live-text h3 em { font-style: italic; color: #ff6b6b; }
   .live-text p { font-size: 0.95rem; color: rgba(255,255,255,0.55); line-height: 1.85; font-weight: 300; margin-bottom: 36px; }
 
-  .live-features { display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
-  .live-feature {
-    display: flex; align-items: center; gap: 12px;
-    font-size: 0.85rem; color: rgba(255,255,255,0.75); font-weight: 400;
-  }
-  .live-feature-icon {
-    width: 32px; height: 32px; border-radius: 8px;
-    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
-    display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0;
-  }
-
+  
   .btn-youtube {
     display: inline-flex; align-items: center; gap: 10px;
     background: #ff0000; color: white;
@@ -403,56 +539,214 @@
   .form-container { border-radius: 24px; overflow: hidden; box-shadow: 0 16px 48px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.06); }
   .form-container iframe { width: 100%; height: 820px; border: none; display: block; }
 
-  @media (max-width: 900px) {
-    .hero-values { display: none; }
-    .chi-grid { grid-template-columns: 1fr; gap: 40px; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
-    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-    .youtube-layout { grid-template-columns: 1fr; }
-    .tesseramento-layout { grid-template-columns: 1fr; }
-    .form-container iframe { height: 700px; }
+
+
+/* --- Linea Separatrice --- */
+.section-divider {
+  width: 100%;
+  height: 1px;            /* Spessore della righetta */
+  background: linear-gradient(to right, transparent, #d1d5db, transparent); 
+  border: none;
+}
+
+
+/* ==========================================
+   CSS SEPARATO PER IL FOOTER
+   ========================================== */
+.site-footer {
+  background: #111827;
+  color: #9ca3af;
+  padding: 60px 48px 30px;
+  font-size: .9rem;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.footer-col p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.footer-col a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: var(--pink, #e8326a);
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-social-links p {
+  margin-bottom: 0;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 40px 20px 20px;
+  }
+}
+
+/* --- LAYOUT GENERALI SOTTO I 900px --- */
+@media (max-width: 900px) {
+  .hero-values { display: none; }
+  .chi-grid { grid-template-columns: 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .youtube-layout { grid-template-columns: 1fr; }
+  .tesseramento-layout { grid-template-columns: 1fr; }
+  .form-container iframe { height: 700px; }
+}
+
+/* --- MENU MOBILE A TENDINA (Sfondo bianco, scritte nere) --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+    z-index: 1002;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0;
+  }
+  
+  .menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark, #333);
+    transition: 0.3s;
+    border-radius: 2px;
   }
 
-  /* CONTATTI */
-  #contatti { background: var(--dark); color: white; text-align: center; position: relative; overflow: hidden; }
-  #contatti::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(232,65,122,0.2), transparent 70%); top: -200px; left: -100px; }
-  #contatti::after { content: ''; position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(37,99,199,0.2), transparent 70%); bottom: -150px; right: -50px; }
-  .contatti-content { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
-  #contatti .section-label { color: #fb7bb0; justify-content: center; }
-  #contatti .section-label::before { background: var(--rose); }
-  #contatti h2 { color: white; }
-  #contatti p { color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.8; margin-bottom: 48px; font-weight: 300; }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 48px; }
-  .contact-item { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 24px 16px; transition: background 0.2s; }
-  .contact-item:hover { background: rgba(255,255,255,0.12); }
-  .contact-item .icon { font-size: 1.8rem; margin-bottom: 12px; }
-  .contact-item p { margin: 0; font-size: 0.85rem; color: rgba(255,255,255,0.8); }
-  .contact-item strong { display: block; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; font-weight: 400; }
-  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px; margin-top: 32px; font-size: 0.8rem; color: rgba(255,255,255,0.3); display: flex; justify-content: space-between; align-items: center; }
-  .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
-
-  @media (max-width: 900px) {
-    .hero-values { display: none; }
-    .chi-grid { grid-template-columns: 1fr; gap: 40px; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
-    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-    .board-grid-members { grid-template-columns: repeat(2, 1fr); }
+  /* Pannello a tendina a blocchi orizzontali */
+  .nav-links {
+    position: absolute;
+    top: 70px; /* Sotto la navbar */
+    left: 0;
+    width: 100%;
+    background-color: #ffffff; /* Sfondo bianco */
+    flex-direction: column;
+    align-items: stretch; /* Allarga i blocchi a tutta larghezza */
+    gap: 0;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* Ombra morbida */
+    z-index: 1001;
+    margin: 0;
+    list-style: none;
   }
+
+  .nav-links li {
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06); /* Sottile linea di separazione grigia */
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase; /* Scritte in Maiuscolo */
+    letter-spacing: 1.5px;
+    padding: 1.1rem 1.5rem; /* Spazio comodo per il tap */
+    color: var(--dark, #111827); /* Scritte nere / scure */
+    display: block;
+    width: 100%;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  /* Effetto al passaggio o tocco (si colora col rosa del tuo brand) */
+  .nav-links a:hover {
+    background: rgba(232, 65, 122, 0.04);
+    color: var(--rose, #e8417a);
+  }
+
+  .nav-links a::after {
+    display: none; 
+  }
+
+  /* Quando il menu si apre via JS */
+  .nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Animazione del pulsante in icona a "X" */
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
 </style>
 </head>
 
 <body>
 
+
 <!-- NAV -->
-<nav aria-label="Navigazione principale">
+<nav class="navbar" aria-label="Navigazione principale">
   <a href="#home" class="nav-logo" aria-label="Aurora per le Marche – Home">
     <div class="logo-circle" aria-hidden="true">
       <img src="img/logo-aurora-per-le-marche.jpg" alt="Logo di aurora">
     </div>
     <div class="nav-brand">Aurora <span>per le Marche</span></div>
   </a>
+
+  <!-- Pulsante Hamburger per Mobile -->
+  <button class="menu-toggle" aria-label="Apri menu" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <!-- Lista dei Link -->
   <ul class="nav-links" role="list">
     <li><a href="#home">Home</a></li>
     <li><a href="#chi-siamo">Chi Siamo</a></li>
@@ -484,10 +778,9 @@
     <div class="value-pill"><strong>Democratica</strong>Partecipazione e rappresentanza</div>
     <div class="value-pill"><strong>Laica</strong>Libertà di coscienza e pensiero</div>
     <div class="value-pill"><strong>Federalista</strong>Europea e autonomista</div>
-    <div class="value-pill"><strong>Antiproibizionista</strong>Libertà individuale responsabile</div>
   </div>
 </section>
-
+<hr class="section-divider">
 <!-- CHI SIAMO -->
 <section id="chi-siamo" aria-labelledby="chi-siamo-title">
   <div class="chi-grid">
@@ -505,17 +798,17 @@
     </div>
   </div>
 </section>
-
+<hr class="section-divider">
 <!-- DIRETTIVO -->
 <section id="direttivo" aria-labelledby="direttivo-title">
   <div class="direttivo-header">
     <div class="section-label" aria-hidden="true">Chi ci guida</div>
     <h2 id="direttivo-title">Il <em>Direttivo</em></h2>
     <p style="color:var(--mid);line-height:1.8;font-size:1rem;font-weight:300;max-width:500px;margin:0 auto;">
-      Le persone che animano Aurora ogni giorno, garantendo direzione, organizzazione e continuità all'associazione.
+      Le persone che animano Aurora ogni giorno.
     </p>
   </div>
-
+<hr class="section-divider">
   <!-- CARICHE -->
   <div class="board-grid">
 
@@ -528,7 +821,7 @@
       </div>
       <span class="board-role">Presidente</span>
       <h3>Roberto Palumbo</h3>
-      <p>Guida l'associazione e ne rappresenta i valori. Coordina con la segretaria le attività e promuove le relazioni istituzionali sul territorio marchigiano.</p>
+      <p>Formazione giuridica all'Università di Trento specializzato in diritto del lavoro e nuove tecnologie. Convinto federalista, appassionato di letteratura e le espressioni dell'umano.  </p>
     </article>
 
     <article class="board-card segretario">
@@ -540,7 +833,7 @@
       </div>
       <span class="board-role">Segretaria</span>
       <h3>Martina Bonci</h3>
-      <p>Gestisce l'organizzazione, le comunicazioni ufficiali e coordina il lavoro quotidiano dell'associazione.</p>
+      <p>Attivista, docente di sostegno e dottoranda in Formazione.</p>
     </article>
 
     <article class="board-card onorario">
@@ -552,7 +845,7 @@
       </div>
       <span class="board-role">Presidente Onorario</span>
       <h3>Pierpaolo Loffreda</h3>
-      <p>Figura di riferimento e garanzia istituzionale dell'associazione. Offre guida e continuità con la visione fondativa di Aurora.</p>
+      <p>Giornalista, professore universitario di cinema, mass media e audiovisi all'Accademia di Belle Arti di Urbino. Appassionato ed esperto di Etiopia</p>
     </article>
 
     <article class="board-card tesoriere">
@@ -564,20 +857,20 @@
       </div>
       <span class="board-role">Tesoriere</span>
       <h3>Emanuele Merio Martinelli</h3>
-      <p>Fondatore e responsabile della gestione economica dell'associazione, garantendo trasparenza e sostenibilità.</p>
+      <p>Fondatore di Aurora, da sempre attivo nei Radicali ed esperto di politica, affianca all'impegno pubblico la passione per la musica.</p>
     </article>
 
   </div>
 
   <!-- DIVISORE -->
   <div class="members-divider">
-    <span>Membri del Direttivo</span>
+    <span></span>
   </div>
 
   <!-- MEMBRI SENZA CARICA -->
   <div class="board-grid-members">
 
-       <article class="board-card-member">
+      <article class="board-card-member">
       <div class="board-avatar-sm">
         <img src="img/marta-mataloni-social-media-manager.avif"
              alt="Membro Responsabile dei Social media e comunicazione"
@@ -586,6 +879,20 @@
       </div>
       <span class="member-role-label">Responsabile dei Social media e comunicazione</span>
       <h4>Marta Mataloni</h4>
+      <p>Formazione giuridica all'Università di Macerata, Attivista e vicina alle tematiche delle crisi umanitarie.</p>
+
+    </article>
+
+          <article class="board-card-member">
+      <div class="board-avatar-sm">
+        <img src="img/alessandro-difa-social-media-manager.jpg"
+             alt="Membro Responsabile dei Social media e comunicazione"
+             width="72" height="72"
+             onerror="this.outerHTML='👤'">
+      </div>
+      <span class="member-role-label">Responsabile dei Social media e comunicazione</span>
+     <h4>Alessandro Di Fabio</h4>
+    <p>Consulente freelance, sviluppatore siti web e analista di dati. Attivista e appassionato di tematiche storiche.</p>
     </article>
 
     <article class="board-card-member">
@@ -596,30 +903,11 @@
              onerror="this.outerHTML='👤'">
       </div>
       <span class="member-role-label">Nel Direttivo</span>
-      <h4>Yuliya Dehtyaryova</h4>
+    <h4>Yuliya Dehtyaryova</h4>
+    <p>Originaria di Leopoli, in Ucraina, è presidente dell'Associazione Europea Italia-Ucraina Maidan - Regione Marche. 🇺🇦</p>
+
     </article>
 
-    <article class="board-card-member">
-      <div class="board-avatar-sm">
-        <img src="img/simone-romagnoli-direttivo-aurora.avif"
-             alt="Membro del Direttivo di Aurora per le Marche"
-             width="72" height="72"
-             onerror="this.outerHTML='👤'">
-      </div>
-      <span class="member-role-label">Nel Direttivo</span>
-      <h4>Simone Romagnoli</h4>
-    </article>
-
-     <article class="board-card-member">
-      <div class="board-avatar-sm">
-        <img src="img/giacomo-fratini-direttivo-aurora.avif"
-             alt="Membro del Direttivo di Aurora per le Marche"
-             width="72" height="72"
-             onerror="this.outerHTML='👤'">
-      </div>
-      <span class="member-role-label">Nel Direttivo</span>
-      <h4>Giacomo Fratini</h4>
-    </article>
 
       <article class="board-card-member">
       <div class="board-avatar-sm">
@@ -629,13 +917,14 @@
              onerror="this.outerHTML='👤'">
       </div>
       <span class="member-role-label">Nel Direttivo</span>
-      <h4>Marco Simoni</h4>
-    </article>
+    <h4>Marco Simoni</h4>
+    <p>IT manager d'azienda ed esponente attivo di Azione Marche, laureato in Ingegneria Informatica e dell'Automazione Industriale.</p>    
+  </article>
 
   </div>
 
 </section>
-
+<hr class="section-divider">
 <!-- ATTIVITÀ -->
 <section id="attivita" aria-labelledby="attivita-title">
   <div class="attivita-header">
@@ -725,15 +1014,12 @@
 </section>
 
 
-
+<hr class="section-divider">
 <!-- LIVE YOUTUBE -->
 <section id="live" aria-labelledby="live-title">
   <div class="live-header">
     <div class="section-label" aria-hidden="true">Su YouTube</div>
     <h2 id="live-title">Le nostre <em>Live</em></h2>
-    <p class="live-intro">
-      Ogni settimana ospitiamo sul nostro canale YouTube esperti, attivisti e figure politiche per affrontare in diretta i temi che contano: dalla politica locale alle grandi questioni nazionali ed europee. Un confronto aperto, libero e senza filtri.
-    </p>
   </div>
 
   <div class="live-banner">
@@ -746,20 +1032,7 @@
       <p>
         Il canale Aurora per le Marche è lo spazio digitale dove la politica si discute davvero. Invitiamo ospiti di diversa estrazione — politici, esperti, rappresentanti della società civile — per un dialogo autentico sui temi che riguardano le Marche e l'Italia.
       </p>
-      <div class="live-features">
-        <div class="live-feature">
-          <div class="live-feature-icon">🎙️</div>
-          <span>Ospiti di diversa estrazione politica e culturale</span>
-        </div>
-        <div class="live-feature">
-          <div class="live-feature-icon">🗳️</div>
-          <span>Temi politici, sociali e civici di attualità</span>
-        </div>
-        <div class="live-feature">
-          <div class="live-feature-icon">💬</div>
-          <span>Dialogo aperto con la community in diretta</span>
-        </div>
-      </div>
+    
       <a href="https://www.youtube.com/@AuroraPerLeMarche/streams"
          target="_blank" rel="noopener noreferrer"
          class="btn-youtube"
@@ -790,7 +1063,7 @@
     </div>
   </div>
 </section>
-
+<hr class="section-divider">
 <!-- TESSERAMENTO -->
 <section id="tesseramento" aria-labelledby="tesseramento-title">
   <div class="tesseramento-inner">
@@ -801,12 +1074,11 @@
     <div class="tesseramento-layout">
       <div>
         <div class="tesseramento-text">
-       <p><strong>Tesserarsi ad Aurora per le Marche</strong> significa far parte di una comunità attiva, democratica e radicata nel territorio. Non è solo un gesto formale: è una scelta di partecipazione civile.</p>
-<p>Compilando il modulo entri ufficialmente nell'associazione e puoi prendere parte alle nostre iniziative, agli eventi, ai gruppi di studio e alle assemblee.</p>
+<p><strong>Tesserarsi ad Aurora per le Marche</strong> significa entrare a far parte di una comunità attiva ed essere partecipi, se lo desideri.</p><p><p>compilando il modulo, entrerai ufficialmente nell'associazione. Verrai inserito in un gruppo di iscritti, dove sarai aggiornato sulle decisioni del direttivo, sulle attività in programma e sui prossimi eventi. Potrai fare domande, proporre idee concrete e, se vorrai, partecipare attivamente (cosa che speriamo ).</p></p>
 <hr>
-<p><em>Ehii:</em> sappiamo che tesserarsi è un passo importante (quasi come un primo appuntamento!). Se prima di iscriverti vuoi capire chi siamo e se siamo davvero così simpatici, ti diamo la possibilità di conoscerci.</p>
-<p>Entra nella nostra <strong>community WhatsApp</strong>: è lo spazio informale dove puoi parlare direttamente con l'organizzazione, farci domande e conoscerci meglio!</p>
-<p><a href="https://wa.me/393397316559" style="font-weight:bold; color:#25D366;">👉 Clicca qui per entrare nel gruppo WhatsApp di benvenuto</a></p>
+<p><em>Ehii:</em> sappiamo che tesserarsi è un passo importante, Se prima di iscriverti vuoi capire chi siamo e se condividi i nostri stessi valori, ti diamo la possibilità di conoscerci.</p>
+<p><strong> Entra nella nostra community WhatsApp</strong>: è lo spazio informale dove puoi parlare direttamente con l'organizzazione e conoscerci meglio!</p>
+<p><a href="https://wa.me/393924588449" style="font-weight:bold; color:#25D366;">👉 Clicca qui per entrare nel gruppo WhatsApp di benvenuto</a></p>
         </div>
         <div class="tesseramento-perks">
           <div class="perk-item">
@@ -854,39 +1126,37 @@
   </div>
 </section>
 
-
+<hr class="section-divider">
 <!-- CONTATTI -->
-<section id="contatti" aria-labelledby="contatti-title">
-  <div class="contatti-content">
-    <div class="section-label" aria-hidden="true">Unisciti a Noi</div>
-    <h2 id="contatti-title">Entra in <em>Aurora</em></h2>
-    <p>Condividi i nostri valori? Vuoi partecipare, collaborare o semplicemente saperne di più? Scrivici ed unisciti alla community WhatsApp gratuita: scopri il mondo Aurora e confrontati con noi.</p>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <div class="icon" aria-hidden="true">📱</div>
-        <strong>Telefono</strong>
-        <p><a href="tel:+393397316559" style="color:inherit;text-decoration:none;">339 731 6559</a></p>
+<footer class="site-footer" id="contatti">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Aurora per le Marche</h4>
+        <p>Associazione attiva sul territorio marchigiano per promuovere cultura civica, dibattito pubblico e partecipazione attiva dei cittadini.</p>
       </div>
-      <div class="contact-item">
-        <div class="icon" aria-hidden="true">📸</div>
-        <strong>Instagram</strong>
-        <p><a href="https://www.instagram.com/aurora_per_le_marche" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">@aurora_per_le_marche</a></p>
+      <div class="footer-col">
+        <h4>Link Rapidi</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="chi-siamo.html">Chi Siamo</a></li>
+          <li><a href="attivita.html">Attività</a></li>
+          <li><a href="tesseramento.html">Tesseramento</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
       </div>
-      <div class="contact-item">
-        <div class="icon" aria-hidden="true">💬</div>
-        <strong>Facebook</strong>
-        <p><a href="https://www.facebook.com/auroraperlermarche" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Aurora per le Marche</a></p>
+      <div class="footer-col">
+        <h4>Seguici sui Social</h4>
+        <div class="footer-social-links">
+          <p><a href="https://www.facebook.com/auroraperlermarche" target="_blank" rel="noopener noreferrer">Aurora per le Marche</a></p>
+          <p><a href="https://www.instagram.com/aurora_per_le_marche" target="_blank" rel="noopener noreferrer">@aurora_per_le_marche</a></p>
+        </div>
       </div>
     </div>
-
     <div class="footer-bottom">
-      <span>© 2024 Aurora per le Marche · Associazione Culturale – Ancona, Marche</span>
-      <span>Una proposta nonviolenta, democratica e riformatrice</span>
-      <br>
-      <a href="#privacy" onclick="document.getElementById('privacy-modal').style.display='flex'; return false;" style="color:rgba(255,255,255,0.6); font-size:0.78rem; text-decoration:underline; margin-top:8px; display:inline-block;">Privacy Policy e Trattamento Dati (GDPR)</a>
+      <p>&copy; 2026 Aurora per le Marche. Tutti i diritti riservati.</p>
     </div>
-  </div>
-</section>
+  </footer>
+
 
 <!-- PRIVACY POLICY MODAL -->
 <div id="privacy-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:9999; align-items:center; justify-content:center; padding:20px;" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
@@ -951,6 +1221,25 @@
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') document.getElementById('privacy-modal').style.display = 'none';
   });
+
+      const mobileMenuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      if (mobileMenuToggle && navLinks) {
+        mobileMenuToggle.addEventListener('click', () => {
+          mobileMenuToggle.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+
+        // Chiude il menu automaticamente quando clicchi su un link
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+          });
+        });
+      }
+   
 </script>
 
 </body>
