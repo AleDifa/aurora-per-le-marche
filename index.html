@@ -6,9 +6,9 @@
 <link rel="icon" type="image/x-icon" href="/img/logo-aurora-per-le-marche.ico">
 <link rel="shortcut icon" href="/img/logo-aurora-per-le-marche.ico">
 
-<title>Aurora per le Marche – Associazione Culturale Ancona | Cultura e Impegno Civile</title>
-<meta name="description" content="Aurora per le Marche è un'associazione culturale con sede nelle Marche. Promuoviamo cultura civica, dialogo democratico e impegno sociale ad Ancona e in tutta la regione. Scopri chi siamo e le nostre attività.">
-<meta name="keywords" content="associazione culturale Ancona, associazione culturale Marche, cultura civica Ancona, impegno civile Marche, associazione politica Marche, Aurora Marche, federalismo europeo Marche, dialogo democratico Ancona">
+<title>Aurora per le Marche – Associazione Culturale Ancona | Europa, Diritti e Ucraina</title>
+<meta name="description" content="Associazione culturale e politica di ispirazione liberale e progressista ad Ancona e nelle Marche. Promuoviamo federalismo europeo, supporto all'Ucraina, diritti civili e democrazia.">
+<meta name="keywords" content="associazione culturale Ancona, associazione culturale Marche, federalismo europeo Marche, supporto Ucraina Ancona, diritti civili Marche, centrosinistra liberale Ancona, Aurora Marche, Renew Europe">
 <meta name="author" content="Aurora per le Marche">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.auroraperlemarche.eu/">
@@ -17,7 +17,7 @@
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Aurora per le Marche">
 <meta property="og:title" content="Aurora per le Marche – Associazione Culturale Ancona">
-<meta property="og:description" content="Associazione culturale e civile nelle Marche. Promuoviamo cultura, dialogo democratico e impegno sociale ad Ancona e in tutta la regione.">
+<meta property="og:description" content="Associazione liberale e progressista nelle Marche. Ci battiamo per l'Europa, i diritti civili e il supporto all'Ucraina ad Ancona e in tutta la regione.">
 <meta property="og:url" content="https://www.auroraperlemarche.eu/">
 <meta property="og:image" content="https://www.auroraperlemarche.eu/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -26,7 +26,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Aurora per le Marche – Associazione Culturale Ancona">
-<meta name="twitter:description" content="Associazione culturale e civile nelle Marche. Cultura, dialogo democratico e impegno sociale ad Ancona e nella regione.">
+<meta name="twitter:description" content="Associazione liberale e progressista nelle Marche. Federalismo europeo, diritti civili e supporto all'Ucraina.">
 <meta name="twitter:image" content="https://www.auroraperlemarche.eu/og-image.jpg">
 
 <script type="application/ld+json">
@@ -35,7 +35,7 @@
   "@type": "Organization",
   "name": "Aurora per le Marche",
   "alternateName": "Associazione Aurora Marche",
-  "description": "Associazione culturale e civile nelle Marche che promuove cultura, dialogo democratico, laicità e federalismo europeo.",
+  "description": "Associazione culturale e politica nelle Marche di ispirazione liberale e progressista che promuove il federalismo europeo, i diritti civili, la libertà e il supporto all'Ucraina.",
   "url": "https://www.auroraperlemarche.eu/",
   "logo": "https://www.auroraperlemarche.eu/logo.png",
   "image": "https://www.auroraperlemarche.eu/og-image.jpg",
@@ -67,7 +67,7 @@
 
 <style>
   :root {
-    --rose: #e8417a;
+    --rose: #ef5b06;
     --blue: #2563c7;
     --blue-light: #4f8ef7;
     --gold: #f0c040;
@@ -245,7 +245,6 @@ nav {
   */
   .hero-orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.35; animation: float 8s ease-in-out infinite; }
   
-  .orb1 { width: 500px; height: 500px; background: var(--rose); top: -100px; right: -100px; animation-delay: 0s; }
  
   .orb2 { width: 400px; height: 400px; background: var(--blue); bottom: 276px; left: 6%; animation-delay: 3s; }
   
@@ -254,7 +253,15 @@ nav {
   @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
   .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: white; border: 1px solid rgba(232,65,122,0.3); color: var(--rose); font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 8px 18px; border-radius: 100px; margin-bottom: 32px; box-shadow: 0 4px 20px rgba(232,65,122,0.12); }
   .hero-tag::before { content: '✦'; font-size: 10px; }
-  h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 900; line-height: 1.05; margin-bottom: 28px; color: var(--dark); }
+h1 { 
+  font-family: 'Playfair Display', serif; 
+  font-size: clamp(2.2rem, 5.2vw, 4.2rem); 
+  font-weight: 900; 
+  line-height: 1.3; 
+  margin-bottom: 36px; 
+  color: var(--dark); 
+  white-space: nowrap; 
+}
   h1 em { font-style: italic; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .hero-desc { font-size: 1.1rem; color: var(--mid); line-height: 1.8; max-width: 560px; margin-bottom: 44px; font-weight: 300; }
   .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -262,13 +269,84 @@ nav {
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(232,65,122,0.45); }
   .btn-secondary { padding: 16px 36px; background: transparent; color: var(--dark); border: 2px solid rgba(55,65,81,0.25); border-radius: 50px; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 0.95rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s, color 0.2s; }
   .btn-secondary:hover { border-color: var(--rose); color: var(--rose); }
-  .hero-values { position: absolute; right: 5vw; top: 40%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 16px; z-index: 1; animation: fadeUp 1.2s ease 0.3s both; }
-  .value-pill { background: white; border-radius: 12px; padding: 14px 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border-left: 4px solid; font-size: 0.85rem; font-weight: 500; color: var(--mid); max-width: 220px; transition: transform 0.2s; }
-  .value-pill:hover { transform: translateX(-4px); }
-  .value-pill:nth-child(1) { border-color:  #ff7f00; } .value-pill:nth-child(2) { border-color: var(--blue); }
-  .value-pill:nth-child(3) { border-color: #10b981; } .value-pill:nth-child(4) { border-color: var(--gold); }
-  .value-pill:nth-child(5) { border-color: #8b5cf6; }
-  .value-pill strong { display: block; color: var(--dark); margin-bottom: 2px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+
+  .hero-values {
+    position: absolute;
+    right: 5vw;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+        flex-wrap: wrap; /* Fondamentale: permette agli elementi di andare a capo quando lo schermo è stretto */
+
+    gap: 16px;
+    z-index: 1;
+  }
+  .value-pill {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    padding: 16px 22px 16px 28px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--mid, #334155);
+    max-width: 300px;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+
+  .value-pill:hover {
+    transform: translateX(-4px);
+  }
+
+  .value-pill strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--dark, #0f172a);
+    font-size: 1rem;
+  }
+
+  .value-pill::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 16px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+
+  /* 1. Europa: Spessore maggiore, sfondo blu UE e stelle */
+  /* 1. Europa: Sfondo blu UE e stelle sul bordo/elemento esterno (::before) */
+  .value-pill:nth-child(1)::before {
+    background-color: #003399;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FFCC00' fill-opacity='0.5' d='M12 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 24px 24px;
+  }
+  
+  .value-pill:nth-child(1) {
+    background: #ffffff; /* Sfondo interno pulito o neutro */
+  }
+
+  /* 2. Ucraina: Spessore maggiore, colori bandiera blu e giallo */
+  .value-pill:nth-child(2)::before {
+    background: linear-gradient(to bottom, #005BBB 50%, #FFD700 50%);
+  }
+  .value-pill:nth-child(2) {
+    background:  #ffffff, linear-gradient(135deg, rgba(0, 91, 187, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
+  }
+
+  /* 3. Diritti Civili: Spessore maggiore, sfumatura dal blu al rosa */
+.value-pill:nth-child(3)::before {
+    background: linear-gradient(to bottom, #ef4444, #f97316, #eab308, #22c55e, #3b82f6, #a855f7);
+  }
+  .value-pill:nth-child(3) {
+    background: #ffffff, linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(249, 115, 22, 0.05) 20%, rgba(234, 179, 8, 0.05) 40%, rgba(34, 197, 94, 0.05) 60%, rgba(59, 130, 246, 0.05) 80%, rgba(168, 85, 247, 0.05) 100%);
+  }
+  
   .logo-circle img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
 
   /* SECTIONS */
@@ -276,7 +354,9 @@ nav {
   .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--rose); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
   .section-label::before { content: ''; width: 32px; height: 2px; background: var(--gradient); border-radius: 2px; }
   h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 24px; color: var(--dark); }
-  h2 em { font-style: italic; color: var(--rose); }
+  h2 em { 
+    font-style: italic; 
+    color: #3061c3 }
 
   /* CHI SIAMO
   #chi-siamo {
@@ -356,7 +436,13 @@ background: linear-gradient(160deg, #eff6ff 0%, #fdf2f7 10%, #ffffff 100%); }*/
   /* ATTIVITÀ */
   #attivita { background: white; }
   .attivita-header { margin-bottom: 60px; max-width: 600px; }
-  .activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; max-width: 1200px; margin: 0 auto; }
+  .activities-grid 
+  { display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+    gap: 28px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+margin-top: 8%;}
   .activity-card { border-radius: 24px; overflow: hidden; border: 1px solid rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; background: var(--soft); }
   .activity-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
 
@@ -391,7 +477,7 @@ background: linear-gradient(160deg, #eff6ff 0%, #fdf2f7 10%, #ffffff 100%); }*/
   /* Stile estetico */
   align-items: center; 
   gap: 10px;
-  background: #ff0000; 
+  background: #3061c3; 
   color: white;
   padding: 15px 32px; 
   border-radius: 50px;
@@ -400,7 +486,7 @@ background: linear-gradient(160deg, #eff6ff 0%, #fdf2f7 10%, #ffffff 100%); }*/
   font-size: 0.9rem;
   text-decoration: none; 
   letter-spacing: 0.3px;
-  box-shadow: 0 8px 30px rgba(255,0,0,0.4);
+  box-shadow: 0 8px 30px rgba(17, 16, 111, 0.4);
   transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
@@ -517,14 +603,14 @@ background: linear-gradient(160deg, #eff6ff 0%, #fdf2f7 10%, #ffffff 100%); }*/
     .live-visual { display: none; }
   }
 
-  /* TESSERAMENTO */
-  #tesseramento { background: white; padding: 100px 5vw; }
-  .tesseramento-inner { max-width: 1100px; margin: 0 auto; }
-  .tesseramento-header { margin-bottom: 56px; }
-  .tesseramento-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: start; }
-  .tesseramento-text p { color: var(--mid); line-height: 1.9; margin-bottom: 20px; font-size: 0.95rem; font-weight: 300; }
-  .tesseramento-text p strong { color: var(--dark); font-weight: 600; }
-  .tesseramento-perks { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
+  /* conosciamoci */
+  #conosciamoci { background: white; padding: 100px 5vw; }
+  .conosciamoci-inner { max-width: 1100px; margin: 0 auto; }
+  .conosciamoci-header { margin-bottom: 56px; }
+  .conosciamoci-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: start; }
+  .conosciamoci-text p { color: var(--mid); line-height: 1.9; margin-bottom: 20px; font-size: 0.95rem; font-weight: 300; }
+  .conosciamoci-text p strong { color: var(--dark); font-weight: 600; }
+  .conosciamoci-perks { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
   .perk-item { display: flex; align-items: flex-start; gap: 12px; background: var(--soft); border-radius: 12px; padding: 14px 18px; border-left: 3px solid var(--rose); }
   .perk-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
   .perk-text { font-size: 0.88rem; color: var(--mid); line-height: 1.6; font-weight: 300; }
@@ -621,12 +707,35 @@ background: linear-gradient(160deg, #eff6ff 0%, #fdf2f7 10%, #ffffff 100%); }*/
 
 /* --- LAYOUT GENERALI SOTTO I 900px --- */
 @media (max-width: 900px) {
-  .hero-values { display: none; }
-  .chi-grid { grid-template-columns: 1fr; gap: 40px; }
-  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-  .youtube-layout { grid-template-columns: 1fr; }
-  .tesseramento-layout { grid-template-columns: 1fr; }
-  .form-container iframe { height: 700px; }
+  #home {
+    flex-direction: column;      /* impila hero-content e hero-values */
+    align-items: stretch;        /* al posto di center */
+    justify-content: center;
+    padding: 100px 5vw 60px;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: none;
+  }
+
+  .hero-values {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: 40px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .value-pill {
+    width: 100% !important;
+  }
 }
 
 /* --- MENU MOBILE A TENDINA (Sfondo bianco, scritte nere) --- */
@@ -743,63 +852,116 @@ background: linear-gradient(160deg, #eff6ff 0%, #fdf2f7 10%, #ffffff 100%); }*/
   <ul class="nav-links" role="list">
     <li><a href="#home">Home</a></li>
     <li><a href="#chi-siamo">Chi Siamo</a></li>
+    <li><a href="#valori">Valori</a></li>
     <li><a href="#direttivo">Direttivo</a></li>
     <li><a href="#attivita">Attività</a></li>
     <li><a href="#live">Live YouTube</a></li>
-    <li><a href="#tesseramento">Tesseramento</a></li>
+    <li><a href="#conosciamoci">Conosciamoci</a></li>
     <li><a href="#contatti">Contatti</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
+
 <section id="home" aria-label="Intestazione principale">
   <div class="hero-bg" aria-hidden="true"></div>
-  <div class="orb1 hero-orb" aria-hidden="true"></div>
   <div class="orb2 hero-orb" aria-hidden="true"></div>
   <div class="hero-content">
     <div class="hero-tag" aria-hidden="true">Associazione Culturale · Marche</div>
-    <h1>Cultura,<br>dialogo e<br><em>impegno civile</em></h1>
+    <h1>Stati Uniti d'Europea,<br>Supporto all'Ucraina,<br>Diritti Civili</h1>
     <p class="hero-desc">
-      Aurora è un'associazione culturale e aggregatore politico ad Ancona e nelle Marche che riunisce persone e movimenti su tematiche sociali condivise — democratica, laica, federalista e radicalmente impegnata per le Marche e l'Europa.
+      Aurora è un'associazione culturale e aggregatore politico ad Ancona e nelle Marche che unisce persone e movimenti su tematiche condivise — per un'Europa federale, la difesa della libertà e la centralità dei diritti civili e sociali.
     </p>
-    <div class="hero-cta">
-      <a href="#chi-siamo" class="btn-primary">Scopri Aurora →</a>
-      <a href="#attivita" class="btn-secondary">Le nostre attività</a>
-    </div>
+   
   </div>
   <div class="hero-values" aria-label="Valori fondanti">
-    <div class="value-pill"><strong>Democratica</strong>Partecipazione e rappresentanza</div>
-    <div class="value-pill"><strong>Laica</strong>Libertà di coscienza e pensiero</div>
-    <div class="value-pill"><strong>Federalista</strong>Europea e autonomista</div>
+    <div class="value-pill"><strong>Stati Uniti d'Europea</strong>Integrazione industriale, politico, legale, economica degli stati europei</div>
+    <div class="value-pill"><strong>Supporto all'Ucraina</strong>Indipendenza ucraina, sostegno militare e umanitario</div>
+    <div class="value-pill"><strong>Diritti Civili</strong> Femminismo, diritti LGBTQ+, parità di genere, diritti del lavoro</div>
   </div>
 </section>
 <hr class="section-divider">
-<!-- CHI SIAMO -->
-<section id="chi-siamo" aria-labelledby="chi-siamo-title">
-  <div class="chi-grid">
-    <div class="chi-text">
-      <div class="section-label" aria-hidden="true">Chi Siamo</div>
-      <h2 id="chi-siamo-title">Un'<em>aurora</em> di idee per le Marche</h2>
-      <p><strong>Aurora per le Marche</strong> nasce dall'idea di costruire uno spazio culturale e politico aperto ad Ancona e in tutta la regione, capace di aggregare sensibilità diverse attorno a valori condivisi: la nonviolenza, la democrazia, la laicità e il federalismo europeo.</p>
-      <p>Non siamo un partito, ma un <strong>aggregatore</strong>: un luogo di incontro e confronto tra persone, movimenti e forze politiche che condividono la visione di una società più libera, giusta e sostenibile — radicata nel territorio delle Marche e aperta all'Europa.</p>
-      <p>Crediamo nel valore del dialogo civile, nella forza della cultura come strumento di cambiamento, e nell'importanza di affrontare le grandi questioni del nostro tempo — dall'ecologia alla giustizia sociale — con rigore, passione e spirito riformatore.</p>
+
+
+<!-- VALORI / AMBITI PROGRAMMATICI -->
+<section id="valori" aria-labelledby="valori-title">
+  <div class="section-header" style="margin-bottom: 2.5rem;">
+    <div class="section-label" aria-hidden="true">Valori</div>
+    <h2 id="valori-title">I nostri tre <em>ambiti</em> strategici</h2>
+  </div>
+  
+  <div class="valori-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+    
+    <!-- 1. Dimensione Europea -->
+    <div class="valore-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 2rem; border-radius: 12px;">
+      <h3>1. Stati Uniti d'Europa</h3>
+      <p style="font-style: italic; margin-bottom: 1rem; opacity: 0.9;">
+        Ci immaginiamo un Europea non più come un'unione di Stati sovrani che cooperano tramite trattati intergovernativi, ma come una federazione vera e propria, simile per struttura agli Stati Uniti.
+      <ul style="list-style-type: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
+       
+        <li><strong>Sovranità e Azione Globale:</strong> Superare il principio dell'unanimità in politica estera per dotare l'Unione di una voce forte, coerente e autorevole sulla scena internazionale.</li>
+        <li><strong>Competitività:</strong> Consolidare il mercato comune, superare i veti, coordinare le politiche industriali ed energetiche per competere alla pari su scala globale. </li>
+        <li><strong>Riforme per una vita migliore:</strong>Transizione ecologica fondata su più spazi verdi e città a misura d'uomo, unita alla difesa delle imprese e allo sviluppo di una tecnologia sovrana con prodotti e servizi Made in UE.</li>
+      
+    </ul>
     </div>
-    <div>
-      <div class="vision-strip">
-        <p>"Aurora nasce dall'incontro tra Simone ed Emanuele nel 2024, dalla convinzione che il cambiamento culturale e politico nelle Marche debba partire dal basso, dalla società civile, dai cittadini."</p>
-      </div>
+
+    <!-- 2. Supporto all'Ucraina -->
+    <div class="valore-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 2rem; border-radius: 12px;">
+      <h3>2. Supporto all'Ucraina</h3>
+      <p style="font-style: italic; margin-bottom: 1rem; opacity: 0.9;">Un impegno a favore della libertà dei popoli, della democrazia e del diritto internazionale contro ogni autocrazia.</p>
+      <ul style="list-style-type: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
+        <li><strong>Sostegno Multidimensionale:</strong> Pieno supporto politico, finanziario, umanitario e militare per l'integrità territoriale.</li>
+        <li><strong>Prospettiva Europea:</strong> Sostenere il percorso di adesione dell'Ucraina come investimento strategico per la pace.</li>
+        <li><strong>Ricostruzione e Sicurezza:</strong> Pianificare il dopoguerra e un'architettura di sicurezza euroatlantica duratura.</li>
+      </ul>
     </div>
+
+    <!-- 3. Diritti Civili -->
+    <div class="valore-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 2rem; border-radius: 12px;">
+      <h3>3. Diritti Civili</h3>
+      <p style="font-style: italic; margin-bottom: 1rem; opacity: 0.9;">La centralità della persona, la libertà individuale e l'uguaglianza effettiva in una società aperta e inclusiva.</p>
+      <ul style="list-style-type: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
+        <li><strong>Libertà:</strong> Ampliare i diritti civili, estensione del matrimonio egualitario, adozioni a coppie dello stesso sesso, diritti LGBTQ+ fino all'eutanasia e suicidio assistito. </li>
+        <li><strong>Femminismo:</strong> dirtti delle donne, parità di genere, parità salariale e di carriera. </li>
+      </ul>
+    </div>
+
+  </div>
+    <!-- BOX ATTIVISM / PARTECIPAZIONE (Inserito dove richiesto) -->
+  <div class="partecipa-banner" style="background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.12); padding: 2.5rem; border-radius: 16px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.25rem;">
+    <h3 style="margin: 0; font-size: 1.5rem;">Ti rispecchi in questi valori? Unisciti a noi!</h3>
+    <p style="max-width: 700px; margin: 0; opacity: 0.9; font-size: 1rem; line-height: 1.5;">
+      Siamo uno spazio aperto. Chiunque voglia partecipare, fare attivismo e promuovere iniziative sul nostro territorio è il benvenuto. Mettiti in gioco insieme a noi!
+    </p>
+    <a href="https://wa.me/393312227574" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #25D366; color: #fff; padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: bold; text-decoration: none; transition: opacity 0.2s;">
+      Scrivici su WhatsApp
+    </a>
+  </div>
+
+ <!-- SEZIONE LISTA SEMPLICE E CENTRATA -->
+  <div class="section-header" style="text-align: center; margin-top: 5%;">
+    <h2 id="pro-title" style="font-size: 1.8rem;"><em>Siamo favorevoli al</em></h2>
+  </div>
+
+  <div style="max-width: 900px; margin: 0 auto; padding: 2 rem; border-radius: 12px;">
+    <ol style="margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 1rem; font-size: 1rem; line-height: 1.6;">
+      <li><strong>Nucleare pulito:</strong> per una transizione energetica basata sulla scienza, sicura e orientata all'indipendenza strategica.</li>
+      <li><strong>Unione Europea e NATO:</strong> difesa del diritto internazionale, dell'alleanza euroatlantica e della libertà dell'Ucraina.</li>
+      <li><strong>Stati Uniti d'Europa:</strong> per un'Unione federale forte, superando i veti e l'unanimità per contare davvero a livello globale.</li>
+      <li><strong>Merito ed efficienza pubblica:</strong> digitalizzazione, sburocratizzazione e valorizzazione delle competenze nella scuola e nel lavoro.</li>
+      <li><strong>Equità generazionale e fisco giusto:</strong> per alleggerire il carico sui giovani e riformare il sistema senza pesare sulle future generazioni.</li>
+      <li><strong>Diritti civili e libertà individuali:</strong> per una società aperta, plurale, inclusiva e fondata sull'uguaglianza effettiva dei diritti.</li>
+    </ol>
   </div>
 </section>
-<hr class="section-divider">
+
+
 <!-- DIRETTIVO -->
 <section id="direttivo" aria-labelledby="direttivo-title">
   <div class="direttivo-header">
     <div class="section-label" aria-hidden="true">Chi ci guida</div>
-    <h2 id="direttivo-title">Il <em>Direttivo</em></h2>
-    <p style="color:var(--mid);line-height:1.8;font-size:1rem;font-weight:300;max-width:500px;margin:0 auto;">
-      Le persone che animano Aurora ogni giorno.
-    </p>
+    <h2 id="direttivo-title"><em>Direttivo</em></h2>
+  
   </div>
 <hr class="section-divider">
   <!-- CARICHE -->
@@ -860,6 +1022,9 @@ background: linear-gradient(160deg, #eff6ff 0%, #fdf2f7 10%, #ffffff 100%); }*/
     <span></span>
   </div>
 
+<hr class="section-divider">
+
+  
   <!-- MEMBRI SENZA CARICA -->
   <div class="board-grid-members">
 
@@ -876,17 +1041,6 @@ background: linear-gradient(160deg, #eff6ff 0%, #fdf2f7 10%, #ffffff 100%); }*/
 
     </article>
 
-          <article class="board-card-member">
-      <div class="board-avatar-sm">
-        <img src="img/alessandro-difa-social-media-manager.jpg"
-             alt="Membro Responsabile dei Social media e comunicazione"
-             width="72" height="72"
-             onerror="this.outerHTML='👤'">
-      </div>
-      <span class="member-role-label">Responsabile dei Social media e comunicazione</span>
-     <h4>Alessandro Di Fabio</h4>
-    <p>Consulente freelance, sviluppatore siti web e analista di dati. Attivista e appassionato di tematiche storiche.</p>
-    </article>
 
     <article class="board-card-member">
       <div class="board-avatar-sm">
@@ -917,15 +1071,63 @@ background: linear-gradient(160deg, #eff6ff 0%, #fdf2f7 10%, #ffffff 100%); }*/
   </div>
 
 </section>
+
 <hr class="section-divider">
+
+<!-- CHI SIAMO -->
+<section id="chi-siamo" aria-labelledby="chi-siamo-title">
+          <div class="section-label" aria-hidden="true">Chi Siamo</div>
+
+  <div class="chi-grid">
+    <div class="chi-text">
+      <h2 id="chi-siamo-title">Un'<em>aurora</em> di idee per le Marche</h2>
+      <p><strong>Aurora per le Marche</strong> nasce dall'idea di costruire uno spazio culturale e politico aperto ad Ancona e in tutta la regione, capace di aggregare sensibilità diverse attorno a valori condivisi: la nonviolenza, la democrazia, la laicità e il federalismo europeo.</p>
+      <p>Crediamo nel valore del dialogo civile, nella forza della cultura come strumento di cambiamento, e nell'importanza di affrontare le grandi questioni del nostro tempo — dall'ecologia alla giustizia sociale — con rigore, passione e spirito riformatore.</p>
+    </div>
+    <div>
+      <div class="vision-strip">
+        <p>"Aurora nasce dall'incontro tra Simone ed Emanuele nel 2024, dalla convinzione che il cambiamento culturale e politico nelle Marche debba partire dal basso, dalla società civile, dai cittadini."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+
 <!-- ATTIVITÀ -->
 <section id="attivita" aria-labelledby="attivita-title">
   <div class="attivita-header">
     <div class="section-label" aria-hidden="true">Cosa Facciamo</div>
     <h2 id="attivita-title">Le nostre <em>Attività</em></h2>
-    <p style="color:var(--mid);line-height:1.8;font-size:1rem;font-weight:300;max-width:500px;">
-      Dibattiti, commemorazioni, incontri pubblici: Aurora agisce sul territorio marchigiano per costruire cultura civica e partecipazione attiva ad Ancona e nelle Marche.
-    </p>
+ 
+  </div>
+
+  <div class="attivita-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+    
+    <!-- Eventi e incontri sul territorio -->
+    <div class="attivita-card" style="padding: 2rem; background: var(--bg-card, #fff)" >
+      <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--heading, #111);">⭐ Eventi e incontri sul territorio</h3>
+   <p>        Organizziamo commemorazioni, conferenze, dibattiti pubblici per favorire il confronto diretto tra esperti e cittadini interessati sui temi di politica, storia, scienza e società.
+      </p>
+    </div>
+
+    <!-- Video e contenuti digitali -->
+    <div class="attivita-card" style="padding: 2rem; background: var(--bg-card, #fff)">
+      <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--heading, #111);"> 📹 Video e contenuti digitali</h3>
+   <p>        Crediamo che gli eventi e gli incontri debbano essere diffusi il più possibile tramite i video che registriamo agli incontri per estendere la portata del dibattito oltre la sala.
+      </p>
+    </div>
+
+    <!-- Comunità, partecipazione e confronto attivo -->
+    <div class="attivita-card" style="padding: 2rem; background: var(--bg-card, #fff)">
+      <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--heading, #111);"> 🍹Aperitivi Tematici</h3>
+      <p>
+        Rinnoviamo i flussi di dialogo interno tra gli iscritti e viviamo gli <strong>aperitivi informali</strong> come momenti di socialità e confronto politico aperto per rafforzare il legame associativo.
+      </p>
+    </div>
+
+
   </div>
 
   <div class="activities-grid">
@@ -1057,67 +1259,70 @@ background: linear-gradient(160deg, #eff6ff 0%, #fdf2f7 10%, #ffffff 100%); }*/
   </div>
 </section>
 <hr class="section-divider">
-<!-- TESSERAMENTO -->
-<section id="tesseramento" aria-labelledby="tesseramento-title">
-  <div class="tesseramento-inner">
-    <div class="tesseramento-header">
-      <div class="section-label" aria-hidden="true">Diventa Socio</div>
-      <h2 id="tesseramento-title">Tesserati ad <em>Aurora</em></h2>
+
+
+
+<!-- conosciamoci -->
+<section id="conosciamoci" aria-labelledby="conosciamoci-title">
+  <div class="conosciamoci-inner">
+    <div class="conosciamoci-header">
+      <div class="section-label" aria-hidden="true">Conosciamoci</div>
+      <h2 id="conosciamoci-title">Vieni a scoprire <em>Aurora</em></h2>
     </div>
-    <div class="tesseramento-layout">
+    <div class="conosciamoci-layout">
       <div>
-        <div class="tesseramento-text">
-<p><strong>Tesserarsi ad Aurora per le Marche</strong> significa entrare a far parte di una comunità attiva ed essere partecipi, se lo desideri.</p><p><p>compilando il modulo, entrerai ufficialmente nell'associazione. Verrai inserito in un gruppo di iscritti, dove sarai aggiornato sulle decisioni del direttivo, sulle attività in programma e sui prossimi eventi. Potrai fare domande, proporre idee concrete e, se vorrai, partecipare attivamente (cosa che speriamo ).</p></p>
-<hr>
-<p><em>Ehii:</em> sappiamo che tesserarsi è un passo importante, Se prima di iscriverti vuoi capire chi siamo e se condividi i nostri stessi valori, ti diamo la possibilità di conoscerci.</p>
-<p><strong> Entra nella nostra community WhatsApp</strong>: è lo spazio informale dove puoi parlare direttamente con l'organizzazione e conoscerci meglio!</p>
-<p><a href="https://wa.me/393924588449" style="font-weight:bold; color:#25D366;">👉 Clicca qui per entrare nel gruppo WhatsApp di benvenuto</a></p>
+        <div class="conosciamoci-text">
+          <p><strong>Prima ci conosciamo, poi se vuoi ti tesserai.</strong> Sappiamo che entrare in un'associazione è un passo importante: per questo ti invitiamo a unirti prima alla nostra community su Wapp per scoprire chi siamo, parlare con noi e condividere idee.</p>
+          <p><a href="https://wa.me/393312227574" style="font-weight:bold; color:#25D366;">👉 Clicca qui per entrare nel gruppo WhatsApp di benvenuto</a></p> 
+          <hr style="margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;">
+          <p><strong>Ti sei già unito o ci conosci già?</strong> Se desideri formalizzare il tuo impegno e tesserarti ufficialmente ad <em>Aurora per le Marche</em>, puoi compilare il modulo qui sotto. </p>
         </div>
-        <div class="tesseramento-perks">
+        <div class="conosciamoci-perks" style="margin-top: 24px;">
           <div class="perk-item">
             <div class="perk-icon">📣</div>
-            <div class="perk-text"><strong>Partecipazione attiva</strong>Avrai la possibilità di proporre nuove iniziative e ideare manifestazioni trasformando le tue idee in progetti concreti.</div>
+            <div class="perk-text"><strong>Partecipazione attiva</strong> Avrai la possibilità di proporre nuove iniziative e ideare manifestazioni trasformando le tue idee in progetti concreti.</div>
           </div>
           <div class="perk-item">
             <div class="perk-icon">🤝</div>
-            <div class="perk-text"> <strong>Rete di persone</strong> Entra in contatto con una comunità di cittadini impegnati nelle Marche, confrontati su temi social e intervieni nelle dirette YouTube.</div>         
+            <div class="perk-text"><strong>Rete di persone</strong> Entra in contatto con una comunità di cittadini impegnati nelle Marche, confrontati su temi sociali e intervieni nelle dirette YouTube.</div>
           </div>
+        </div>
       </div>
-    </div>
-    <div class="form-container" style="padding: 40px; border: 1px solid #e0e0e0; text-align: center; background-color: #f9f9f9; border-radius: 16px;">
-    <h3 style="font-family: sans-serif; margin-bottom: 12px; color: #333;">Adesione Associazione AURORA per le Marche</h3>
-    <p style="font-family: sans-serif; margin-bottom: 20px; color: #666;">Per completare il tesseramento, compila il modulo ufficiale cliccando il tasto qui sotto.</p>
+      <div class="form-container" style="padding: 40px; border: 1px solid #e0e0e0; text-align: center; background-color: #f9f9f9; border-radius: 16px;">
+        <h3 style="font-family: sans-serif; margin-bottom: 12px; color: #333;">Adesione Associazione AURORA per le Marche</h3>
+        <p style="font-family: sans-serif; margin-bottom: 20px; color: #666;">Per completare il tesseramento ufficiale, compila il modulo cliccando il tasto qui sotto.</p>
 
-    <!-- GDPR Info box -->
-    <div style="background:#fff8f0; border:1px solid #fcd5a0; border-radius:10px; padding:16px 18px; margin-bottom:22px; text-align:left;">
-      <p style="font-family:'Jost',sans-serif; font-size:0.82rem; color:#92400e; line-height:1.7; margin:0;">
-        &#x1F512; <strong>Trattamento dei dati personali (GDPR):</strong> I dati che inserirai nel modulo (nome, cognome, email, ecc.) saranno trattati da <strong>Aurora per le Marche</strong> esclusivamente per la gestione del rapporto associativo, in conformità al Reg. UE 2016/679. Il modulo è gestito tramite Google Forms.
-        <br><a href="#" onclick="document.getElementById('privacy-modal').style.display='flex'; return false;" style="color:#e8417a; font-weight:700; text-decoration:underline;">Leggi l'informativa completa sulla Privacy &#x2192;</a>
-      </p>
-    </div>
+        <!-- GDPR Info box -->
+        <div style="background:#fff8f0; border:1px solid #fcd5a0; border-radius:10px; padding:16px 18px; margin-bottom:22px; text-align:left;">
+          <p style="font-family:'Jost',sans-serif; font-size:0.82rem; color:#92400e; line-height:1.7; margin:0;">
+            &#x1F512; <strong>Trattamento dei dati personali (GDPR):</strong> I dati che inserirai nel modulo (nome, cognome, email, ecc.) saranno trattati da <strong>Aurora per le Marche</strong> esclusivamente per la gestione del rapporto associativo, in conformità al Reg. UE 2016/679. Il modulo è gestito tramite Google Forms.
+            <br><a href="#" onclick="document.getElementById('privacy-modal').style.display='flex'; return false;" style="color:#e8417a; font-weight:700; text-decoration:underline;">Leggi l'informativa completa sulla Privacy &#x2192;</a>
+          </p>
+        </div>
 
-    <!-- Consenso checkbox (obbligatorio) -->
-    <div style="display:flex; align-items:flex-start; gap:10px; text-align:left; margin-bottom:22px; background:#fff; border:1px solid #d1d5db; border-radius:10px; padding:14px 16px;">
-      <input type="checkbox" id="privacy-consent" name="privacy-consent"
-             style="margin-top:3px; width:18px; height:18px; accent-color:#e8417a; flex-shrink:0; cursor:pointer;"
-             onchange="document.getElementById('form-btn').style.opacity = this.checked ? '1' : '0.45'; document.getElementById('form-btn').style.pointerEvents = this.checked ? 'auto' : 'none';">
-      <label for="privacy-consent" style="font-family:'Jost',sans-serif; font-size:0.85rem; color:#374151; line-height:1.6; cursor:pointer;">
-        Ho letto e accetto l'<a href="#" onclick="document.getElementById('privacy-modal').style.display='flex'; return false;" style="color:#e8417a; font-weight:600;">informativa privacy</a> e acconsento al trattamento dei miei dati personali da parte di Aurora per le Marche per le finalità associative descritte. <strong>(Obbligatorio)</strong>
-      </label>
-    </div>
+        <!-- Consenso checkbox (obbligatorio) -->
+        <div style="display:flex; align-items:flex-start; gap:10px; text-align:left; margin-bottom:22px; background:#fff; border:1px solid #d1d5db; border-radius:10px; padding:14px 16px;">
+          <input type="checkbox" id="privacy-consent" name="privacy-consent"
+                 style="margin-top:3px; width:18px; height:18px; accent-color:#e8417a; flex-shrink:0; cursor:pointer;"
+                 onchange="document.getElementById('form-btn').style.opacity = this.checked ? '1' : '0.45'; document.getElementById('form-btn').style.pointerEvents = this.checked ? 'auto' : 'none';">
+          <label for="privacy-consent" style="font-family:'Jost',sans-serif; font-size:0.85rem; color:#374151; line-height:1.6; cursor:pointer;">
+            Ho letto e accetto l'<a href="#" onclick="document.getElementById('privacy-modal').style.display='flex'; return false;" style="color:#e8417a; font-weight:600;">informativa privacy</a> e acconsento al trattamento dei miei dati personali da parte di Aurora per le Marche per le finalità associative descritte. <strong>(Obbligatorio)</strong>
+          </label>
+        </div>
 
-    <a id="form-btn"
-       href="https://docs.google.com/forms/d/e/1FAIpQLSfxn-CCdgl1MxD0f9iRr97fZAHCtC05N9QMcbcpJ4z1-PZbXw/viewform?usp=sf_link" 
-       target="_blank" 
-       style="background: linear-gradient(135deg, #673ab7, #2563c7); color: white; padding: 15px 36px; text-decoration: none; font-family: 'Jost', sans-serif; font-weight: bold; display: inline-block; text-transform: uppercase; letter-spacing: 1px; border-radius: 50px; box-shadow: 0 8px 25px rgba(103,58,183,0.35); opacity: 0.45; pointer-events: none; transition: opacity 0.2s;">
-       Apri il modulo di iscrizione &#x2192;
-    </a>
-    <p style="font-family:'Jost',sans-serif; font-size:0.75rem; color:#9ca3af; margin-top:12px;">Spunta la casella sopra per abilitare il pulsante</p>
-</div>
+        <a id="form-btn"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSdlwhwIWDAXSyc4wo15dlZ6Nzj2gPfnyUDTGzKY7bg302sZ_w/viewform?usp=publish-editor" 
+           target="_blank" 
+           style="background: linear-gradient(135deg, #3a47b7, #2563c7); color: white; padding: 15px 36px; text-decoration: none; font-family: 'Jost', sans-serif; font-weight: bold; display: inline-block; text-transform: uppercase; letter-spacing: 1px; border-radius: 50px; box-shadow: 0 8px 25px rgba(103,58,183,0.35); opacity: 0.45; pointer-events: none; transition: opacity 0.2s;">
+            Apri il modulo di iscrizione &#x2192;
+        </a>
+        <p style="font-family:'Jost',sans-serif; font-size:0.75rem; color:#9ca3af; margin-top:12px;">Spunta la casella sopra per abilitare il pulsante</p>
       </div>
     </div>
   </div>
 </section>
+
+
 
 <hr class="section-divider">
 <!-- CONTATTI -->
@@ -1133,7 +1338,7 @@ background: linear-gradient(160deg, #eff6ff 0%, #fdf2f7 10%, #ffffff 100%); }*/
           <li><a href="index.html">Home</a></li>
           <li><a href="chi-siamo.html">Chi Siamo</a></li>
           <li><a href="attivita.html">Attività</a></li>
-          <li><a href="tesseramento.html">Tesseramento</a></li>
+          <li><a href="conosciamoci.html">conosciamoci</a></li>
           <li><a href="contatti.html">Contatti</a></li>
         </ul>
       </div>
@@ -1163,7 +1368,7 @@ background: linear-gradient(160deg, #eff6ff 0%, #fdf2f7 10%, #ffffff 100%); }*/
     Contatto del Titolare: <a href="mailto:info@auroraperlemarche.eu" style="color:#2563c7;">info@auroraperlemarche.eu</a> · Tel. 339 731 6559</p>
 
     <h3 style="font-size:1rem; font-weight:700; color:#111827; margin:20px 0 8px;">2. Dati Raccolti e Finalità</h3>
-    <p style="color:#374151; line-height:1.8; font-size:0.9rem;">Attraverso il modulo di tesseramento (Google Forms) raccogliamo i seguenti dati personali:</p>
+    <p style="color:#374151; line-height:1.8; font-size:0.9rem;">Attraverso il modulo di conosciamoci (Google Forms) raccogliamo i seguenti dati personali:</p>
     <ul style="color:#374151; line-height:1.9; font-size:0.9rem; padding-left:20px; margin:8px 0;">
       <li><strong>Nome e cognome</strong> – per identificare il socio</li>
       <li><strong>Data di nascita</strong> – per verificare la maggiore età (ove richiesto)</li>
