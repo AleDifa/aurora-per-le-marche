@@ -598,10 +598,6 @@ margin-top: 8%;}
     border: 1px solid rgba(255,255,255,0.1);
   }
 
-  @media (max-width: 900px) {
-    .live-banner { grid-template-columns: 1fr; gap: 40px; padding: 40px 28px; }
-    .live-visual { display: none; }
-  }
 
   /* conosciamoci */
   #conosciamoci { background: white; padding: 100px 5vw; }
@@ -719,6 +715,66 @@ margin-top: 8%;}
     max-width: none;
   }
 
+.chi-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important; /* Regola lo spazio verticale tra gli elementi */
+  }
+
+  /* 2. Assicura che la vision-strip si comporti correttamente */
+  .vision-strip {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  .hero-values {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: 40px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+.conosciamoci-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important;
+  }
+
+  /* Assicura che gli elementi interni occupino tutta la larghezza */
+  .conosciamoci-layout > * {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .value-pill {
+    width: 100% !important;
+  }
+}
+
+/* =========================================
+   LAYOUT SOTTO I 900px (Tablet e Desktop Piccoli)
+   ========================================= */
+@media (max-width: 900px) {
+  
+  /* --- Home e Hero --- */
+  #home {
+    flex-direction: column;      /* impila hero-content e hero-values */
+    align-items: stretch;        /* al posto di center */
+    justify-content: center;
+    padding: 100px 5vw 60px;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: none;
+  }
+
   .hero-values {
     position: relative !important;
     top: auto !important;
@@ -736,10 +792,56 @@ margin-top: 8%;}
   .value-pill {
     width: 100% !important;
   }
+
+  /* --- Chi Siamo & Vision --- */
+  .chi-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important; /* Regola lo spazio verticale tra gli elementi */
+  }
+
+  .vision-strip {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  /* --- Conosciamoci & Iscrizione --- */
+  .conosciamoci-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important;
+  }
+
+  .conosciamoci-layout > * {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* --- Live Banner --- */
+  .live-banner { 
+    grid-template-columns: 1fr; 
+    gap: 40px; 
+    padding: 40px 28px; 
+  }
+  
+  .live-visual { 
+    display: none; 
+  }
 }
 
-/* --- MENU MOBILE A TENDINA (Sfondo bianco, scritte nere) --- */
+/* =========================================
+   LAYOUT SOTTO I 768px (Smartphone)
+   ========================================= */
 @media (max-width: 768px) {
+  
+  /* --- Footer --- */
+  .site-footer {
+    padding: 40px 20px 20px;
+  }
+
+  /* --- Menu Mobile a Tendina --- */
   .menu-toggle {
     display: flex;
     z-index: 1002;
@@ -757,6 +859,19 @@ margin-top: 8%;}
     background-color: var(--dark, #333);
     transition: 0.3s;
     border-radius: 2px;
+  }
+
+  /* Animazione del pulsante in icona a "X" */
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 
   /* Pannello a tendina a blocchi orizzontali */
@@ -798,7 +913,7 @@ margin-top: 8%;}
     transition: background 0.2s, color 0.2s;
   }
 
-  /* Effetto al passaggio o tocco (si colora col rosa del tuo brand) */
+  /* Effetto al passaggio o tocco (si colora col rosa del brand) */
   .nav-links a:hover {
     background: rgba(232, 65, 122, 0.04);
     color: var(--rose, #e8417a);
@@ -813,17 +928,6 @@ margin-top: 8%;}
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-  }
-
-  /* Animazione del pulsante in icona a "X" */
-  .menu-toggle.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .menu-toggle.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .menu-toggle.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
   }
 }
 </style>
@@ -1099,11 +1203,10 @@ margin-top: 8%;}
 <section id="attivita" aria-labelledby="attivita-title">
   <div class="attivita-header">
     <div class="section-label" aria-hidden="true">Cosa Facciamo</div>
-    <h2 id="attivita-title">Le nostre <em>Attività</em></h2>
  
   </div>
 
-  <div class="attivita-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+  <div class="attivita-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 3rem;">
     
     <!-- Eventi e incontri sul territorio -->
     <div class="attivita-card" style="padding: 2rem; background: var(--bg-card, #fff)" >
@@ -1129,6 +1232,9 @@ margin-top: 8%;}
 
 
   </div>
+<h2 id="attivita-title" style="text-align: center; width: 100%; margin-left: auto; margin-right: auto; margin-top: 5%;">
+  Le nostre <em>Attività</em> di maggiore rilievo
+</h2>
 
   <div class="activities-grid">
     <article class="activity-card">
