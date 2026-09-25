@@ -37,8 +37,8 @@
   "alternateName": "Associazione Aurora Marche",
   "description": "Associazione culturale e politica nelle Marche di ispirazione liberale e progressista che promuove il federalismo europeo, i diritti civili, la libertà e il supporto all'Ucraina.",
   "url": "https://www.auroraperlemarche.eu/",
-  "logo": "https://www.auroraperlemarche.eu/logo.png",
-  "image": "https://www.auroraperlemarche.eu/og-image.jpg",
+  "logo": "https://www.auroraperlemarche.eu/img/logo-aurora-per-le-marche.jpg",
+  "image": "https://www.auroraperlemarche.eu/img/logo-aurora-per-le-marche.jpg",
   "telephone": "+393312227574",
   "address": {
     "@type": "PostalAddress",
@@ -685,15 +685,7 @@ margin-top: 8%;}
   margin-bottom: 0;
 }
 
-.footer-bottom {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
-  font-size: 0.85rem;
-  color: #6b7280;
-}
+
 
 @media (max-width: 768px) {
   .site-footer {
@@ -930,6 +922,55 @@ margin-top: 8%;}
     transform: translateY(0);
   }
 }
+
+/* Stile base del footer (come il tuo) */
+.footer-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* Stile base per tutti i link nel footer */
+.footer-custom a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s ease; /* Transizione fluida */
+}
+
+/* --- EFFETTO HOVER GLOW --- */
+
+.glow-link {
+    position: relative;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+}
+
+/* Al passaggio del mouse */
+.glow-link:hover {
+    /* 1. Gradiente più sobrio (es. transizione pulita verso un azzurro/verde tenue) */
+    background: linear-gradient(90deg, 
+        #00ffaa, 
+        #38bdf8
+    );
+    
+    /* 2. Ritaglia lo sfondo sulla forma del testo */
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* 3. Rendi il testo trasparente per mostrare il gradiente */
+    -webkit-text-fill-color: transparent;
+    
+    /* 4. Via l'ombra pesante (`filter: drop-shadow` rimosso) */
+    
+    /* 5. Un leggerissimo movimento pulito (senza zoom forzato) */
+    opacity: 0.95;
+}
+
 </style>
 </head>
 
@@ -1227,6 +1268,8 @@ margin-top: 8%;}
       <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--heading, #111);"> 🍹Aperitivi Tematici</h3>
       <p>
         Rinnoviamo i flussi di dialogo interno tra gli iscritti e viviamo gli <strong>aperitivi informali</strong> come momenti di socialità e confronto politico aperto per rafforzare il legame associativo.
+<br />
+       <li> Gli aperitivi sono il miglior modo di conoscerci: scrivici o chiamaci al <em>393 312227574 </em>per unirti a noi e fare due chiacchiere!</li> 
       </p>
     </div>
 
@@ -1456,10 +1499,11 @@ margin-top: 8%;}
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Aurora per le Marche. Tutti i diritti riservati.</p>
-    </div>
-  </footer>
+<div class="footer-custom">
+    <p>&copy; 2026 Aurora per le Marche. Tutti i diritti riserva.</p>
+    <p>Design & Codice di <a href="https://www.alessandrodifa.com" target="_blank" rel="noopener" class="glow-link">Alessandro DiFa</a></p>
+</div>
+</footer>
 
 
 <!-- PRIVACY POLICY MODAL -->
