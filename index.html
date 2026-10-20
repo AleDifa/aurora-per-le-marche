@@ -66,7 +66,50 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Stile -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
+
+  <!-- Fix mobile (Instagram in-app browser incluso) -->
+  <style>
+    html, body { max-width: 100%; overflow-x: hidden; }
+    img, video, iframe, svg { max-width: 100%; }
+    /* il titolo hero non andava mai a capo e sforava lo schermo */
+    h1 { white-space: normal !important; overflow-wrap: break-word; }
+    .navbar { -webkit-backdrop-filter: blur(12px); }
+
+    @media (max-width: 900px) {
+      /* Hamburger */
+      .menu-toggle {
+        display: flex !important; flex-direction: column; align-items: center; justify-content: center;
+        gap: 5px; width: 44px; height: 44px; padding: 0; z-index: 1002;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .menu-toggle .bar { width: 25px; height: 3px; background-color: var(--dark, #333); border-radius: 2px; transition: .3s; }
+      .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+      .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+      .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+      /* Menu a tendina */
+      .nav-links {
+        position: absolute; top: 70px; left: 0; width: 100%; z-index: 1001;
+        flex-direction: column; align-items: stretch; gap: 0; margin: 0; padding: 0;
+        background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,.08);
+        max-height: calc(100vh - 70px); overflow-y: auto;
+        opacity: 0; visibility: hidden; transform: translateY(-10px);
+        transition: opacity .3s, visibility .3s, transform .3s;
+      }
+      .nav-links.active { opacity: 1; visibility: visible; transform: none; }
+      .nav-links li { width: 100%; text-align: left; border-bottom: 1px solid rgba(0,0,0,.06); }
+      .nav-links a {
+        display: block; width: 100%; padding: 1.1rem 1.5rem; font-size: .95rem; font-weight: 600;
+        letter-spacing: 1.5px; text-transform: uppercase; color: var(--dark, #111827);
+      }
+      .nav-links a::after { display: none; }
+
+      /* Padding eccessivi su schermi piccoli (stili inline) */
+      .valore-card, .partecipa-banner, .form-container { padding: 1.25rem !important; }
+      #privacy-modal > div { padding: 40px 20px 24px !important; }
+    }
+  </style>
 </head>
 
 <body>
@@ -140,12 +183,12 @@
     <h2 id="valori-title">I nostri <span style="font-size: 2em;">3</span> <em>ambiti</em> strategici</h2>
   </div>
 
-  <div class="valori-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+  <div class="valori-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2rem;">
 
     <!-- 1. Dimensione Europea -->
     <div class="valore-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 2rem; border-radius: 12px;">
-      <h3 style="margin-left: -30px;">1. Stati Uniti d'Europa</h3>
-      <p style="margin-left: -30px; font-style: italic; margin-bottom: 1rem; opacity: 0.9;">
+      <h3 style="">1. Stati Uniti d'Europa</h3>
+      <p style="font-style: italic; margin-bottom: 1rem; opacity: 0.9;">
         Ci immaginiamo un Europa non più come un'unione di Stati sovrani che cooperano tramite trattati intergovernativi, ma come una federazione vera e propria, simile per struttura agli Stati Uniti.
       </p>
       <ul style="list-style-type: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
@@ -157,8 +200,8 @@
 
     <!-- 2. Supporto all'Ucraina -->
     <div class="valore-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 2rem; border-radius: 12px;">
-      <h3 style="margin-left: -30px;">2. Supporto all'Ucraina</h3>
-      <p style="margin-left: -30px; font-style: italic; margin-bottom: 1rem; opacity: 0.9;">
+      <h3 style="">2. Supporto all'Ucraina</h3>
+      <p style="font-style: italic; margin-bottom: 1rem; opacity: 0.9;">
         Un impegno a favore della libertà dei popoli, della democrazia e del diritto internazionale contro ogni autocrazia.
       </p>
       <ul style="list-style-type: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
@@ -170,8 +213,8 @@
 
     <!-- 3. Diritti Civili -->
     <div class="valore-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 2rem; border-radius: 12px;">
-      <h3 style="margin-left: -30px;">3. Diritti Civili e Sociali</h3>
-      <p style="margin-left: -30px; font-style: italic; margin-bottom: 1rem; opacity: 0.9;">
+      <h3 style="">3. Diritti Civili e Sociali</h3>
+      <p style="font-style: italic; margin-bottom: 1rem; opacity: 0.9;">
         La centralità della persona, la libertà individuale e l'uguaglianza effettiva in una società aperta e inclusiva.
       </p>
       <ul style="list-style-type: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
@@ -186,7 +229,7 @@
   <!-- BOX ATTIVISMO / PARTECIPAZIONE -->
   <div class="partecipa-banner" style="background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.12); padding: 2.5rem; border-radius: 16px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.25rem;">
     <h3 style="margin: 0; font-size: 1.5rem;">Ti rispecchi in questi valori? Unisciti a noi!</h3>
-    <p style="margin-left: -30px; max-width: 700px; margin: 0; opacity: 0.9; font-size: 1rem; line-height: 1.5;">
+    <p style="max-width: 700px; margin: 0; opacity: 0.9; font-size: 1rem; line-height: 1.5;">
       Siamo uno spazio aperto. Chiunque voglia partecipare, fare attivismo e promuovere iniziative sul nostro territorio è il benvenuto. Mettiti in gioco insieme a noi!
     </p>
     <a href="https://wa.me/393312227574" target="_blank" rel="noopener noreferrer"
@@ -357,11 +400,11 @@
     <h2>cosa facciamo nel <em>concreto</em> per portare avanti i nostri obiettivi</h2>
   </div>
 
-  <div class="attivita-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 3rem;">
+  <div class="attivita-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); margin-top: 3rem;">
 
     <!-- Eventi e incontri sul territorio -->
     <div class="attivita-card" style="padding: 2rem; background: var(--bg-card, #fff)">
-      <h3 style="margin-left: -30px; font-size: 1.25rem; color: var(--heading, #111);">⭐ Eventi e incontri sul territorio</h3>
+      <h3 style="font-size: 1.25rem; color: var(--heading, #111);">⭐ Eventi e incontri sul territorio</h3>
       <p>
         Organizziamo commemorazioni, conferenze, dibattiti pubblici per favorire il confronto diretto tra esperti e cittadini interessati sui temi di politica, storia, scienza e società.
       </p>
@@ -369,7 +412,7 @@
 
     <!-- Video e contenuti digitali -->
     <div class="attivita-card" style="padding: 2rem; background: var(--bg-card, #fff)">
-      <h3 style="margin-left: -30px; font-size: 1.25rem; color: var(--heading, #111);">📹 Video e contenuti digitali</h3>
+      <h3 style="font-size: 1.25rem; color: var(--heading, #111);">📹 Video e contenuti digitali</h3>
       <p>
         Crediamo che gli eventi e gli incontri debbano essere diffusi il più possibile tramite i video che registriamo agli incontri per estendere la portata del dibattito oltre la sala.
       </p>
@@ -377,7 +420,7 @@
 
     <!-- Aperitivi tematici -->
     <div class="attivita-card" style="padding: 2rem; background: var(--bg-card, #fff)">
-      <h3 style="margin-left: -30px; font-size: 1.25rem; color: var(--heading, #111);">🍹 Aperitivi Tematici</h3>
+      <h3 style="font-size: 1.25rem; color: var(--heading, #111);">🍹 Aperitivi Tematici</h3>
       <p>
         Momento di confronto e dialogo interno tra gli iscritti, dove viviamo gli <strong>aperitivi informali</strong> come momenti di socialità e scambio di visioni politiche per rafforzare il legame associativo.
       </p>
@@ -712,7 +755,29 @@
   </div>
 </div>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=2"></script>
+<script>
+/* Menu mobile di riserva: se main.js è in cache/bloccato nel browser di Instagram, il menu funziona lo stesso */
+(function () {
+  var btn = document.querySelector('.menu-toggle');
+  var menu = document.querySelector('.nav-links');
+  if (!btn || !menu) return;
+
+  var fresh = btn.cloneNode(true);            // toglie i listener di main.js: niente doppio toggle
+  btn.parentNode.replaceChild(fresh, btn);
+  btn = fresh;
+
+  function setOpen(open) {
+    menu.classList.toggle('active', open);
+    btn.classList.toggle('active', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Chiudi menu' : 'Apri menu');
+  }
+  btn.addEventListener('click', function (e) { e.preventDefault(); setOpen(!menu.classList.contains('active')); });
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+  window.addEventListener('resize', function () { if (window.innerWidth > 900) setOpen(false); });
+})();
+</script>
 
 </body>
 </html>
