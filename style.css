@@ -641,6 +641,7 @@ h2 em {
 
 
 /* ---------- 6. ATTIVITÀ ---------- */
+/* ---------- 6. ATTIVITÀ ---------- */
 #attivita {
   background: white;
 }
@@ -650,14 +651,18 @@ h2 em {
   margin-bottom: 60px;
 }
 
+/* BENTO: 2 colonne, la prima card occupa tutta la riga */
 .activities-grid {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 28px;
   max-width: 1200px;
   margin: 8% auto 0;
 }
 
 .activity-card {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   background: var(--soft);
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -670,15 +675,47 @@ h2 em {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
 
+/* BENTO: immagini tagliate alla stessa proporzione */
 .activity-card img {
   display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
 }
 
 .activity-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 28px;
+}
+
+/* BENTO: card in evidenza, tutta la larghezza con immagine a sinistra.
+   Si attiva con la classe activity-card--featured, oppure in automatico
+   sulla prima card se non vuoi toccare l'HTML. */
+.activity-card--featured,
+.activities-grid > .activity-card:first-child {
+  grid-column: 1 / -1;
+  flex-direction: row;
+}
+
+.activity-card--featured img,
+.activities-grid > .activity-card:first-child img {
+  width: 55%;
+  aspect-ratio: auto;
+  min-height: 100%;
+}
+
+.activity-card--featured .activity-body,
+.activities-grid > .activity-card:first-child .activity-body {
+  justify-content: center;
+  padding: 40px;
+}
+
+.activity-card--featured h3,
+.activities-grid > .activity-card:first-child h3 {
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
 }
 
 .activity-tag {
@@ -713,14 +750,21 @@ h2 em {
   color: var(--mid);
 }
 
+/* BENTO: meta e bottone spinti in fondo, così le card affiancate sono allineate */
 .activity-meta {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 16px;
+  margin-top: auto;
   font-size: 0.78rem;
   font-weight: 500;
   color: #9ca3af;
+}
+
+.activity-card--featured .activity-meta,
+.activities-grid > .activity-card:first-child .activity-meta {
+  margin-top: 0;
 }
 
 .activity-meta span {
@@ -753,13 +797,18 @@ h2 em {
   color: white;
 }
 
+/* BENTO: elimina la cella vuota creata dal <br> dentro la griglia */
+.activities-grid > br {
+  display: none;
+}
+
 /* Bottone "Guarda tutte le attività" */
 .btn-attivita {
   display: flex;
   align-items: center;
   gap: 10px;
   width: fit-content;
-  margin: 0 auto;
+  margin: 48px auto 0;
   padding: 15px 32px;
   background: #3061c3;
   border-radius: 50px;
@@ -784,6 +833,27 @@ h2 em {
   height: 20px;
   flex-shrink: 0;
 }
+
+/* BENTO: responsive */
+@media (max-width: 900px) {
+  .activity-card--featured,
+  .activities-grid > .activity-card:first-child {
+    flex-direction: column;
+  }
+
+  .activity-card--featured img,
+  .activities-grid > .activity-card:first-child img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+  }
+
+  .activity-card--featured .activity-body,
+  .activities-grid > .activity-card:first-child .activity-body {
+    padding: 28px;
+  }
+}
+
 
 
 /* ---------- 7. LIVE YOUTUBE ---------- */
