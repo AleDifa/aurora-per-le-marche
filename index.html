@@ -118,7 +118,7 @@
 <nav class="navbar" aria-label="Navigazione principale">
   <a href="#home" class="nav-logo" aria-label="Aurora per le Marche – Home">
     <div class="logo-circle" aria-hidden="true">
-      <img src="img/logo-aurora-per-le-marche.jpg" alt="Logo di aurora">
+      <img src="img/aurora_per_le_marche_logo.jpg" alt="Logo di aurora">
     </div>
     <div class="nav-brand">Aurora <span>per le Marche</span></div>
   </a>
@@ -306,6 +306,18 @@
       <p>Giornalista, professore universitario di cinema, mass media e audiovisi all'Accademia di Belle Arti di Urbino. Appassionato ed esperto di Etiopia</p>
     </article>
 
+    <article class="board-card tesoriere">
+      <div class="board-avatar">
+        <img src="img/marco-simoni-direttivo-aurora.avif"
+             alt="Membro del Direttivo di Aurora per le Marche"
+             width="90" height="90"
+             onerror="this.outerHTML='👤'">
+      </div>
+      <span class="board-role">Tesoriere</span>
+      <h3>Marco Simoni</h3>
+      <p>IT manager d'azienda ed esponente attivo di Azione Marche, laureato in Ingegneria Informatica e dell'Automazione Industriale.</p>
+    </article>
+
   </div>
 
   <!-- DIVISORE -->
@@ -342,17 +354,7 @@
       <p>Originaria di Leopoli, in Ucraina, è responsabile dell'Associazione Europea Italia-Ucraina Maidan - Regione Marche. 🇺🇦</p>
     </article>
 
-    <article class="board-card-member">
-      <div class="board-avatar-sm">
-        <img src="img/marco-simoni-direttivo-aurora.avif"
-             alt="Membro del Direttivo di Aurora per le Marche"
-             width="72" height="72"
-             onerror="this.outerHTML='👤'">
-      </div>
-      <span class="member-role-label">Nel Direttivo</span>
-      <h4>Marco Simoni</h4>
-      <p>IT manager d'azienda ed esponente attivo di Azione Marche, laureato in Ingegneria Informatica e dell'Automazione Industriale.</p>
-    </article>
+
 
   <!--   <article class="board-card-member">
       <div class="board-avatar-sm">
@@ -372,24 +374,6 @@
 <hr class="section-divider">
 
 
-<!-- CHI SIAMO
-<section id="chi-siamo" aria-labelledby="chi-siamo-title">
-  <div class="section-label" aria-hidden="true">Chi Siamo</div>
-
-  <div class="chi-grid">
-    <div class="chi-text">
-      <h2 id="chi-siamo-title">Un'<em>aurora</em> di idee per le Marche</h2>
-      <p><strong>Aurora per le Marche</strong> nasce dall'idea di costruire uno spazio culturale e politico aperto ad Ancona e in tutta la regione, capace di aggregare sensibilità diverse attorno a valori condivisi: la nonviolenza, la democrazia, la laicità e il federalismo europeo.</p>
-      <p>Crediamo nel valore del dialogo civile, nella forza della cultura come strumento di cambiamento, e nell'importanza di affrontare le grandi questioni del nostro tempo — dall'ecologia alla giustizia sociale — con rigore, passione e spirito riformatore.</p>
-    </div>
-    <div>
-      <div class="vision-strip">
-        <p>"Aurora nasce dall'incontro tra Simone ed Emanuele nel 2024, dalla convinzione che il cambiamento culturale e politico nelle Marche debba partire dal basso, dalla società civile, dai cittadini."</p>
-      </div>
-    </div>
-  </div>
-</section>
--->
 
 <hr class="section-divider">
 
@@ -432,84 +416,87 @@
 
   </div>
 
-  <h2 id="attivita-title" style="text-align: center; width: 100%; margin-left: auto; margin-right: auto; margin-top: 5%;">
-    Le nostre <em>Attività</em> di maggiore rilievo
-  </h2>
-
-  <div class="activities-grid">
-
-    <article class="activity-card">
-      <img src="img/shock-settico-resta-48-ore-barella-civitanova.avif"
-           alt="Choc settico, 70enne per 48 ore in barella al pronto soccorso">
-
-      <div class="activity-body">
-        <span class="activity-tag tag-evento">Tematica</span>
-        <h3>La denuncia di Aurora per le Marche: "sistema sanitario al collasso"</h3>
-        <p>
-          Abbiamo reso pubblica la testimonianza dei familiari di una donna di circa settant'anni, rimasta oltre 48 ore su una barella al pronto soccorso di Civitanova Marche, senza un posto letto disponibile in tutta la regione.
-          <br><br>
-          La notizia è stata ripresa da decine di testate, ben oltre i confini regionali. È un segnale: quando si denuncia con chiarezza, la gente riconosce la propria esperienza e risponde.
-        </p>
-        <div class="activity-meta">
-          <span>📍 Civitanova Marche</span>
-          <span>🗓 19/ 20 Maggio 2026</span>
-        </div>
-        <a href="attivita-singola-malasanità-civitanova.html" target="_blank" rel="noopener" class="btn-outline">
-          🗞️ Leggi l'articolo completo
-        </a>
+<h2 id="attivita-title" style="text-align: center; width: 100%; margin-left: auto; margin-right: auto; margin-top: 5%;">
+  Le nostre <em>Attività</em> di maggiore rilievo
+</h2>
+ 
+<div class="activities-grid">
+ 
+  <!-- Card in evidenza (aggiunta la classe activity-card--featured) -->
+  <article class="activity-card activity-card--featured">
+    <img src="img/shock-settico-resta-48-ore-barella-civitanova.avif"
+         alt="Choc settico, 70enne per 48 ore in barella al pronto soccorso">
+ 
+    <div class="activity-body">
+      <span class="activity-tag tag-evento">Tematica</span>
+      <h3>La denuncia di Aurora per le Marche: "sistema sanitario al collasso"</h3>
+      <p>
+        Abbiamo reso pubblica la testimonianza dei familiari di una donna di circa settant'anni, rimasta oltre 48 ore su una barella al pronto soccorso di Civitanova Marche, senza un posto letto disponibile in tutta la regione.
+        <br><br>
+        La notizia è stata ripresa da decine di testate, ben oltre i confini regionali. È un segnale: quando si denuncia con chiarezza, la gente riconosce la propria esperienza e risponde.
+      </p>
+      <div class="activity-meta">
+        <span>📍 Civitanova Marche</span>
+        <span>🗓 19/ 20 Maggio 2026</span>
       </div>
-    </article>
-
-    <article class="activity-card">
-      <img src="img/evento-tassa-etica-auora-ancona.avif"
-           alt="Dibattito Aurora per le Marche sulla tassa etica ad Ancona, febbraio 2026">
-
-      <div class="activity-body">
-        <span class="activity-tag tag-dibattito">Dibattito</span>
-        <h3>Confronto sulla Tassa Etica con i partiti</h3>
-        <p>
-          L'evento di Ancona ha analizzato la proposta di legge per abolire la "tassa etica", un'addizionale del 25% su IRPEF e IRES per il settore pornografico lecito. Il dibattito ha evidenziato come questa imposta sia discriminatoria: non colpisce in base alla capacità contributiva, ma applica un pregiudizio morale a un'attività lavorativa regolare.
-        </p>
-        <div class="activity-meta">
-          <span>📍 Ancona</span>
-          <span>🗓 Febbraio 2026</span>
-        </div>
-        <a href="https://firmereferendum.giustizia.it/referendum/open/dettaglio-open/5600018"
-           target="_blank" rel="noopener noreferrer" class="activity-link"
-           aria-label="Firma il referendum per abolire la tassa etica sul portale del Ministero della Giustizia">
-          ✍️ Firma il referendum
-        </a>
+      <a href="attivita-singola-malasanità-civitanova.html" target="_blank" rel="noopener" class="btn-outline">
+        🗞️ Leggi l'articolo completo
+      </a>
+    </div>
+  </article>
+ 
+  <article class="activity-card">
+    <img src="img/evento-tassa-etica-auora-ancona.avif"
+         alt="Dibattito Aurora per le Marche sulla tassa etica ad Ancona, febbraio 2026">
+ 
+    <div class="activity-body">
+      <span class="activity-tag tag-dibattito">Dibattito</span>
+      <h3>Confronto sulla Tassa Etica con i partiti</h3>
+      <p>
+        L'evento di Ancona ha analizzato la proposta di legge per abolire la "tassa etica", un'addizionale del 25% su IRPEF e IRES per il settore pornografico lecito. Il dibattito ha evidenziato come questa imposta sia discriminatoria: non colpisce in base alla capacità contributiva, ma applica un pregiudizio morale a un'attività lavorativa regolare.
+      </p>
+      <div class="activity-meta">
+        <span>📍 Ancona</span>
+        <span>🗓 Febbraio 2026</span>
       </div>
-    </article>
-
-    <article class="activity-card">
-      <img src="img/ucraina-commemorazione-ancona.avif"
-           alt="Commemorazione del conflitto in Ucraina Co-organizzato da Aurora per le Marche, 24 febbraio 2026">
-
-      <div class="activity-body">
-        <span class="activity-tag tag-commemorazione">Commemorazione</span>
-        <h3>Commemorazione della Guerra in Ucraina</h3>
-        <p>
-          Un momento di riflessione collettiva e memoria civile per non dimenticare il dramma del conflitto in Ucraina. Aurora co-organizza con l'associazione europea italia-ucraina Maidan della regione Marche una cerimonia pubblica per la solidarietà e la difesa dei diritti umani.
-        </p>
-        <div class="activity-meta">
-          <span>📍 Marche</span>
-          <span>🗓 24 Febbraio 2026</span>
-        </div>
+      <a href="https://firmereferendum.giustizia.it/referendum/open/dettaglio-open/5600018"
+         target="_blank" rel="noopener noreferrer" class="activity-link"
+         aria-label="Firma il referendum per abolire la tassa etica sul portale del Ministero della Giustizia">
+        ✍️ Firma il referendum
+      </a>
+    </div>
+  </article>
+ 
+  <article class="activity-card">
+    <img src="img/ucraina-commemorazione-ancona.avif"
+         alt="Commemorazione del conflitto in Ucraina Co-organizzato da Aurora per le Marche, 24 febbraio 2026">
+ 
+    <div class="activity-body">
+      <span class="activity-tag tag-commemorazione">Commemorazione</span>
+      <h3>Commemorazione della Guerra in Ucraina</h3>
+      <p>
+        Un momento di riflessione collettiva e memoria civile per non dimenticare il dramma del conflitto in Ucraina. Aurora co-organizza con l'associazione europea italia-ucraina Maidan della regione Marche una cerimonia pubblica per la solidarietà e la difesa dei diritti umani.
+      </p>
+      <div class="activity-meta">
+        <span>📍 Marche</span>
+        <span>🗓 24 Febbraio 2026</span>
       </div>
-    </article>
+    </div>
+  </article>
+ 
+  <!-- rimosso il <br>: dentro una grid diventava una cella vuota -->
+</div>
+ 
+<a href="attivita.html"
+   target="_blank" rel="noopener noreferrer"
+   class="btn-attivita"
+   aria-label="Guarda tutte le attività di Aurora per le Marche">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+  </svg>
+  Guarda tutte le attività
+</a>
+ 
 
-    <br>
-  </div>
-
-  <a href="attivita.html"
-     target="_blank" rel="noopener noreferrer"
-     class="btn-attivita"
-     aria-label="Guarda tutte le attività di Auora per le marche">
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    </svg>
-    Guarda tutte le attività
-  </a>
 </section>
 
 <hr class="section-divider">
