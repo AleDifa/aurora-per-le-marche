@@ -76,6 +76,15 @@
     h1 { white-space: normal !important; overflow-wrap: break-word; }
     .navbar { -webkit-backdrop-filter: blur(12px); }
 
+    /* Logo tra l'etichetta e il titolo (multiply = il bianco del jpg sparisce sullo sfondo) */
+    .hero-logo {
+      display: block; width: 180px; height: auto; margin: 1.5rem 0 1rem;
+      mix-blend-mode: multiply;
+    }
+    @media (max-width: 900px) {
+      .hero-logo { width: 130px; margin: 1.25rem 0 .75rem; }
+    }
+
     @media (max-width: 900px) {
       /* Hamburger */
       .menu-toggle {
@@ -150,7 +159,8 @@
   <div class="orb2 hero-orb" aria-hidden="true"></div>
 
   <div class="hero-content">
-    <div class="hero-tag" aria-hidden="true">Associazione Culturale · Marche</div>
+    <div class="hero-tag" aria-hidden="true">Associazione Culturale nella regione Marche</div>
+    <img class="hero-logo" src="img/aurora_per_le_marche_logo.jpg" alt="Logo Aurora per le Marche" width="180" height="180">
     <h1>Stati Uniti d'Europa,<br>Supporto all'Ucraina,<br>Diritti Civili e Sociali</h1>
     <p class="hero-desc">
       Aurora è un'associazione culturale e aggregatore politico ad Ancona e nelle Marche che unisce persone e movimenti su tematiche condivise — per realizzare un'Europa federale, per difendere la libertà dei popoli e la centralità dei diritti civili e sociali anche sul nostro territorio.
